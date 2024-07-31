@@ -1,0 +1,16 @@
+.tabs {
+    display: flex;
+    width: 100%;
+    gap: 20px;
+}
+
+.tab {
+    &_title {
+        font-size: 40px;
+        font-weight: var(--font-weight-bold);
+    }
+
+    &_desc {
+        font-weight: var(--font-weight-medium);
+    }
+}

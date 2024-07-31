@@ -1,0 +1,60 @@
+{
+    "compilerOptions": {
+        "outDir": "./dist/",
+        "skipLibCheck": true, //!
+        "noImplicitAny": true,
+        "types": ["node"],
+        "module": "ESNext",
+        "target": "es5",
+        "jsx": "react-jsx",
+        "allowJs": true,
+        "strict": true,
+        // "typeRoots": ["./node_modules/@types"],
+        "baseUrl": ".",
+        "paths": {
+            "*": ["./src/*"]
+        },
+        "moduleResolution": "node",
+        "allowSyntheticDefaultImports": true,
+        "esModuleInterop": true
+    },
+    "include": ["src", "scripts"],
+    "exclude": ["node_modules"],
+    "ts-node": {
+        "compilerOptions": {
+            "module": "CommonJS"
+        }
+    }
+}
+
+// {
+//   "compilerOptions": {
+//       "outDir": "./dist/",
+//       "skipLibCheck": true, //!
+//       "noImplicitAny": true,
+//       "types": ["node"],
+//       "module": "ESNext",
+//       "target": "es5",
+//       "jsx": "react-jsx",
+//       "allowJs": true,
+//       "strict": true,
+//       "moduleResolution": "node",
+//       "baseUrl": ".",
+//       "paths": {
+//           "@/*": ["./src/*"]
+//       },
+//       "esModuleInterop": true,
+//       "allowSyntheticDefaultImports": true,
+//       "isolatedModules": true
+//   },
+//   "exclude": ["node_modules"],
+//   "ts-node": {
+//       "compilerOptions": {
+//           "module": "CommonJS"
+//       }
+//   }
+//   // "include": ["./config/jest/setupTest.ts"],
+//   // "types": ["jest", "node"]
+
+
+// }

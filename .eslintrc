@@ -1,0 +1,73 @@
+{
+    "env": {
+        "browser": true,
+        "es2021": true,
+        "jest": true,
+        "node": true
+    },
+    "extends": ["plugin:react/recommended", "airbnb"],
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+        "ecmaFeatures": {
+            "jsx": true
+        },
+        "ecmaVersion": "latest",
+        "sourceType": "module"
+    },
+    "plugins": ["react", "@typescript-eslint", "react-hooks"],
+    "globals": {
+        "__IS_DEV__": true,
+        "__API__": true
+    },
+    "overrides": [
+        {
+            "files": ["**/src/**/*.test.{ts, tsx}"],
+            "rules": {
+                "i18next/no-literal-string": "off"
+            }
+        }
+    ],
+    "rules": {
+        "react/no-array-index-key": "off",
+        "consistent-return": "off",
+        "react/jsx-indent": [2, 4],
+        "react/jsx-indent-props": [2, 4],
+        "indent": [2, 4],
+        "react/jsx-filename-extension": [
+            2,
+            { "extensions": [".js", ".jsx", ".tsx"] },
+        ],
+        "import/no-unresolved": "off",
+        "import/prefer-default-export": "off",
+        "@typescript-eslint/no-unused-vars": "error",
+        "no-unused-vars": "off",
+        "react/require-default-props": "off",
+        "react/react-in-jsx-scope": "off",
+        "react/jsx-props-no-spreading": "off",
+        "react/function-component-definition": "off",
+        "no-shadow": "off",
+        "import/extensions": "off",
+        "import/no-extraneous-dependencies": "off",
+        "no-underscore-dangle": "off",
+        "object-curly-newline": "off",
+        "max-len": ["error", { "ignoreComments": true, "code": 120 }],
+        "linebreak-style": "off",
+        "arrow-body-style": "off",
+        "jsx-a11y/click-events-have-key-events": "off",
+        "jsx-a11y/no-static-element-interactions": "off",
+        "react-hooks/rules-of-hooks": "error",
+        "react-hooks/exhaustive-deps": "error",
+        "no-unused-expressions": "off",
+        "no-plusplus": "off",
+        "no-param-reassign": "off",
+        "arrow-parens": [2, "as-needed"],
+        "import/no-named-default": 0,
+        "jsx-a11y/label-has-associated-control": "off",
+        "lines-between-class-members": "off",
+        "no-undef": "off",
+        "no-control-regex": "off",
+        "no-restricted-globals": "off",
+        "import/order": "off",
+        "react/no-unescaped-entities": "off"
+    }
+}

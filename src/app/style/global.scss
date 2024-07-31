@@ -1,0 +1,16 @@
+* {
+    font: var(--font-main);
+    color: var(--gray-color-60);
+    font-weight: var(--font-weight-medium);
+    // outline: 3px solid green;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: var(--absolute-color-white);
+    font-weight: var(--font-weight-semi-bold);
+}

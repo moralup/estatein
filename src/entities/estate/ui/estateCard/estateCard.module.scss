@@ -1,0 +1,21 @@
+.estateCard {
+    width: 512px;
+    padding: 40px;
+    border: 1px var(--gray-color-15) solid;
+    border-radius: var(--card-border-radius);
+}
+
+.img {
+    width: 432px;
+    height: 318px;
+    border-radius: var(--image-border-radius);
+}
+
+.title {
+    font-size: 24px;
+}
+
+.price {
+    color: var(--absolute-color-white);
+    font-size: var(--font-size-xl);
+}

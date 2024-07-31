@@ -1,0 +1,35 @@
+//! Regular
+@font-face {
+    font-family: Urbanist;
+    font-style: normal;
+    font-weight: 400;
+    src: local(Urbanist),
+        url(../../shared/assets/fonts/Urbanist/static/Urbanist-Regular.ttf);
+}
+
+//! Medium
+@font-face {
+    font-family: Urbanist;
+    font-style: normal;
+    font-weight: 500;
+    src: local(Urbanist),
+        url(../../shared/assets/fonts/Urbanist/static/Urbanist-Medium.ttf);
+}
+
+//! Semi Bold
+@font-face {
+    font-family: Urbanist;
+    font-style: normal;
+    font-weight: 600;
+    src: local(Urbanist),
+        url(../../shared/assets/fonts/Urbanist/static/Urbanist-SemiBold.ttf);
+}
+
+//! Bold
+@font-face {
+    font-family: Urbanist;
+    font-style: normal;
+    font-weight: 700;
+    src: local(Urbanist),
+        url(../../shared/assets/fonts/Urbanist/static/Urbanist-Bold.ttf);
+}
