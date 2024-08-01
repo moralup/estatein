@@ -11,16 +11,16 @@ export const StatsTabs: FC<StatsTabsProps> = ({ className }) => {
     return (
         <div className={clsx(cls.tabs, className)}>
             <Tab mini>
-                <h3 className={cls.tab_title}>200+</h3>
-                <p className={cls.tab_desc}> Happy Customers</p>
+                <h3 className={cls.title}>200+</h3>
+                <p className={cls.desc}> Happy Customers</p>
             </Tab>
             <Tab mini>
-                <h3 className={cls.tab_title}>10k+</h3>
-                <p className={cls.tab_desc}>Properties For Clients</p>
+                <h3 className={cls.title}>10k+</h3>
+                <p className={cls.desc}>Properties For Clients</p>
             </Tab>
             <Tab mini>
-                <h3 className={cls.tab_title}>16+</h3>
-                <p className={cls.tab_desc}> Years of Experience</p>
+                <h3 className={cls.title}>16+</h3>
+                <p className={cls.desc}> Years of Experience</p>
             </Tab>
         </div>
     );

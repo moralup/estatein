@@ -1,0 +1,13 @@
+.outlineDecorator {
+    position: relative;
+    outline: 2px solid var(--gray-color-50);
+}
+
+.label {
+    position: absolute;
+    top: -15px;
+    left: clamp(3px, 5%, 10px);
+    text-wrap: nowrap;
+    padding: 0 5px;
+    background: var(--gray-color-08);
+}

@@ -21,7 +21,7 @@ export const ServicesRange: FC<ServicesRangeProps> = ({ className }) => {
             {services.map(({ Icon, text }) => (
                 <Tab key={text} justify="center">
                     <Icon />
-                    <span>{text}</span>
+                    <span className={cls.text}>{text}</span>
                 </Tab>
             ))}
         </HStack>

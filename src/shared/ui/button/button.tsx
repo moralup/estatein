@@ -18,6 +18,7 @@ export const Button: FC<ButtonProps> = props => {
     } = props;
 
     const classes = clsx(cls.button, cls[theme], max && cls.max, className);
+    // const classes = 'clsx(cls.button, cls[theme], max && cls.max, className)';
 
     return (
         <button

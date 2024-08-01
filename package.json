@@ -8,12 +8,25 @@
     "build:dev": "webpack --env mode=development",
     "build:prod": "webpack --env mode=production",
     "lint:ts": "eslint \"**/*.{ts,tsx}\"",
-    "lint:ts:fix": "eslint \"**/*.{ts,tsx}\" --fix"
+    "lint:ts:fix": "eslint \"**/*.{ts,tsx}\" --fix",
+    "storybook": "storybook dev -p 6006 -c config/storybook",
+    "storybook:build": "storybook build -c config/storybook",
+    "build-storybook": "storybook build"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@chromatic-com/storybook": "^1.6.1",
+    "@storybook/addon-essentials": "^8.2.6",
+    "@storybook/addon-interactions": "^8.2.6",
+    "@storybook/addon-links": "^8.2.6",
+    "@storybook/addon-onboarding": "^8.2.6",
+    "@storybook/addon-webpack5-compiler-swc": "^1.0.5",
+    "@storybook/blocks": "^8.2.6",
+    "@storybook/react": "^8.2.6",
+    "@storybook/react-webpack5": "^8.2.6",
+    "@storybook/test": "^8.2.6",
     "@svgr/webpack": "^8.1.0",
     "@types/node": "^20.6.0",
     "@types/react": "^18.3.3",
@@ -28,6 +41,7 @@
     "eslint-plugin-jsx-a11y": "^6.9.0",
     "eslint-plugin-react": "^7.35.0",
     "eslint-plugin-react-hooks": "^4.6.2",
+    "eslint-plugin-storybook": "^0.8.0",
     "file-loader": "^6.2.0",
     "globals": "^15.8.0",
     "html-webpack-plugin": "^5.6.0",
@@ -35,6 +49,7 @@
     "prettier": "^3.3.3",
     "sass": "^1.77.8",
     "sass-loader": "^16.0.0",
+    "storybook": "^8.2.6",
     "style-loader": "^4.0.0",
     "ts-loader": "^9.5.1",
     "ts-morph": "^23.0.0",
@@ -47,5 +62,10 @@
   "dependencies": {
     "react": "^18.3.1",
     "react-dom": "^18.3.1"
+  },
+  "eslintConfig": {
+    "extends": [
+      "plugin:storybook/recommended"
+    ]
   }
 }
