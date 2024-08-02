@@ -1,0 +1,14 @@
+.commentCard {
+    width: 512px;
+    border: 1px solid var(--gray-color-15);
+    border-radius: var(--card-border-radius);
+    padding: 50px;
+}
+
+.feedback {
+    color: var(--absolute-color-white);
+
+    &Title {
+        font-size: var(--font-size-xl);
+    }
+}

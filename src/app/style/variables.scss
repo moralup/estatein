@@ -18,9 +18,8 @@
     --font-weight-bold: 700;
 
     //* Main
-    --font-family-main: Urbanist, "Times New Roman", serif;
+    --font-family-main: Urbanist, 'Times New Roman', serif;
     --font-main: var(--font-size-m) / var(--font-line) var(--font-family-main);
-
 
     //! - -  Color  - - - - - - -
 
@@ -53,8 +52,11 @@
     --gray-color-30: #4d4d4d;
     --gray-color-40: #666666;
     --gray-color-50: #808080;
-    --gray-color-60: #999999;  
+    --gray-color-60: #999999;
 
+    //* Other Colors
+
+    --star-color: #FFE500;
 
     //! - -  Other  - - - - - - -
 

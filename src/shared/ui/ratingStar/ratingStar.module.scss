@@ -1,0 +1,13 @@
+.star {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    fill: var(--gray-color-60);
+    background: var(--gray-color-10);
+    border: solid 1px var(--gray-color-15);
+}
+
+.active {
+    fill: var(--star-color);
+}
+
