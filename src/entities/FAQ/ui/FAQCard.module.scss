@@ -1,0 +1,13 @@
+.faq {
+    width: 512px;
+    padding: 50px;
+    border: 1px solid var(--gray-color-15);
+    border-radius: var(--card-border-radius);
+}
+
+.question {
+    font-size: var(--font-size-xl);
+    letter-spacing: 0.1px;
+    // размер шрифта * 2 стросчки * 150% line-height 
+    min-height: calc(var(--font-size-xl) * 3);
+}

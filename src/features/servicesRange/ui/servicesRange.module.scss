@@ -1,7 +1,12 @@
 .servicesRange {
     padding: 20px;
+    border-top: 1px solid var(--gray-color-15);
+    border-bottom: 1px solid var(--gray-color-15);
+    outline: 10px solid var(--gray-color-10);
 }
 
 .text {
     text-wrap: nowrap;
+    text-transform: capitalize;
+    letter-spacing: 1px;
 }

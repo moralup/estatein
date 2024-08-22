@@ -21,8 +21,25 @@
     background: var(--gray-color-10);
 }
 
-// OPTIONS
+.clear {
+    margin: 0;
+    padding: 0;
+    background: none;
+}
+
+// CONDITIONS
 
 .max {
     width: 100%;
+}
+
+.circle {
+    padding: 13px;
+    border-radius: 50%;
+    display: flex;
+    align-items: baseline;
+}
+
+.disabled {
+    opacity: 0.5;
 }

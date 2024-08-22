@@ -1,0 +1,18 @@
+.footer {
+    display: flex;
+    justify-content: space-between;
+    padding: 100px 162px;
+}
+
+.linkPage {
+    font-size: var(--font-size-l);
+    line-height: 24px;
+    margin-bottom: 10px;
+
+    &Section {
+        text-wrap: nowrap;
+        color: var(--absolute-color-white);
+        line-height: 24px;
+        letter-spacing: -0.05px;
+    }
+}

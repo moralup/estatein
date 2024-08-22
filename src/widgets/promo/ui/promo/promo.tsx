@@ -1,25 +1,19 @@
-/* eslint-disable jsx-a11y/alt-text */
 import { FC } from 'react';
 
 import { Button } from 'shared/ui/button';
-import { StatsTabs } from 'entities/statsTabs';
 import { HStack, VStack } from 'shared/ui/stack';
+import { StatsTabs } from '../stats/statsTabs';
 
 import { clsx } from 'shared/lib/clsx';
 import cls from './promo.module.scss';
+import { PromoImage } from '../promoImage/promoImage';
 
-import houseImage from 'shared/assets/images/house.png';
-
-interface PromoProps {
-    className?: string;
-}
-
-export const Promo: FC<PromoProps> = ({ className }) => {
+export const Promo: FC = () => {
     return (
         <HStack
             gap="4vw"
             justify="between"
-            className={className}
+            align="left"
         >
             <VStack
                 gap={60}
@@ -41,7 +35,7 @@ export const Promo: FC<PromoProps> = ({ className }) => {
                 </HStack>
                 <StatsTabs />
             </VStack>
-            <img src={houseImage} />
+            <PromoImage />
         </HStack>
     );
 };

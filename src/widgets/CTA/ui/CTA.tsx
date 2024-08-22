@@ -1,6 +1,8 @@
 import type { FC } from 'react';
+
 import { Button } from 'shared/ui/button';
 import { HStack, VStack } from 'shared/ui/stack';
+
 import AbstractDesignTiles from 'shared/assets/images/abstract-design-tiles.svg';
 
 import { clsx } from 'shared/lib/clsx';
@@ -16,11 +18,14 @@ export const CTA: FC<CTAProps> = ({ className }) => {
             className={clsx(cls.CTA, className)}
             justify="between"
         >
-            <VStack gap={14}>
+            <VStack
+                gap={14}
+                className={cls.textContent}
+            >
                 <h2 className={cls.title}>
                     Start Your Real Estate Journey Today
                 </h2>
-                <p className={cls.description}>
+                <p>
                     Your dream property is just a click away. Whether you're
                     looking for a new home, a strategic investment, or expert
                     real estate advice, Estatein is here to assist you every

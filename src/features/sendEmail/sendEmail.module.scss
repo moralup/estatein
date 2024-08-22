@@ -1,0 +1,43 @@
+$background: var(--gray-color-08);
+
+@mixin absolute($left, $right) {
+    position: absolute;
+    top: 21px;
+    left: $left;
+    right: $right;
+}
+
+.form {
+    position: relative;
+}
+
+.input {
+    width: 423px;
+    padding: 21px 24px;
+    border: 1px solid var(--gray-color-15);
+    border-radius: var(--card-border-radius);
+    background: $background;
+
+    &:-internal-autofill-selected {
+        transition:
+            background-color 0s 600000s,
+            color 0s 600000s !important;
+    }
+}
+
+.placeholder {
+    @include absolute(24px, auto);
+    padding: 0 5px;
+    pointer-events: none;
+    transition: all 0.3s ease-in-out;
+    background: $background;
+
+    &__active {
+        left: 12px;
+        top: -12px;
+    }
+}
+
+.btnSend {
+    @include absolute(auto, 24px);
+}

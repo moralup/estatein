@@ -1,22 +1,25 @@
 import { FC } from 'react';
-import cls from './homePage.module.scss';
-import { clsx } from 'shared/lib/clsx';
-import { Promo } from 'widgets/overview';
-import { EstateCardList } from 'features/estateCardList/ui/estateCardList';
-import { CTA } from 'widgets/CTA';
+import { Promo } from 'widgets/promo';
 import { ServicesRange } from 'features/servicesRange';
+import {
+    CarouselObjectProperties,
+    CarouselObjectTestimonials,
+    CarouselObjectFAQ,
+} from 'widgets/carouselObject';
+import { CTA } from 'widgets/CTA';
+import { Footer } from 'widgets/footer/ui/footer';
+import cls from './homePage.module.scss';
 
-interface HomePageProps {
-    className?: string;
-}
-
-export const HomePage: FC<HomePageProps> = ({ className }) => {
+export const HomePage: FC = () => {
     return (
-        <div className={clsx(cls.homePage, className)}>
+        <div className={cls.homePage}>
             <Promo />
             <ServicesRange />
-            <EstateCardList />
+            <CarouselObjectProperties />
+            <CarouselObjectTestimonials />
+            <CarouselObjectFAQ />
             <CTA />
+            <Footer />
         </div>
     );
 };

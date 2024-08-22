@@ -7,19 +7,19 @@ import RoundSunIcon from 'shared/assets/icons/round-sun-icon.svg';
 
 export const services: ServiceI[] = [
     {
+        Icon: RoundHouseIcon,
+        text: 'find your dream home',
+    },
+    {
         Icon: RoundCameraIcon,
-        text: 'Find your dream home',
+        text: 'unlock property value',
     },
     {
         Icon: RoundHousesIcon,
-        text: 'Unlock Property Value',
-    },
-    {
-        Icon: RoundHouseIcon,
-        text: 'Effortless Property Management',
+        text: 'effortless property management',
     },
     {
         Icon: RoundSunIcon,
-        text: 'Smart Investments, Informed Decisions',
+        text: 'smart investments, informed decisions',
     },
 ];

@@ -1,14 +1,15 @@
 .CTA {
     position: relative;
     padding: 100px 162px;
+    margin-top: 96px;
+}
+
+.textContent {
+    width: 73%;
 }
 
 .title {
-    font-size: 48px;
-}
-
-.description {
-    width: clamp(900px, 68vw, 1154px);
+    font-size: var(--font-size-xxxl);
 }
 
 .design {
@@ -18,14 +19,13 @@
     width: 566px;
     height: 308px;
     overflow: hidden;
-     z-index: -1;
+    z-index: -1;
+
     &Left {
         left: -20px;
     }
 
     &Right {
-        // right: -92px;
-        // bottom: -64px;
         right: 0;
         bottom: 0;
         transform: scale(-1, 1);

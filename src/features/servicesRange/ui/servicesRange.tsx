@@ -19,7 +19,10 @@ export const ServicesRange: FC<ServicesRangeProps> = ({ className }) => {
             className={clsx(cls.servicesRange, className)}
         >
             {services.map(({ Icon, text }) => (
-                <Tab key={text} justify="center">
+                <Tab
+                    key={text}
+                    justify="center"
+                >
                     <Icon />
                     <span className={cls.text}>{text}</span>
                 </Tab>

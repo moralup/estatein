@@ -8,7 +8,7 @@ import { VStack } from 'shared/ui/stack';
 import { clsx } from 'shared/lib/clsx';
 import cls from './commentCard.module.scss';
 
-interface CommentCardProps {
+export interface CommentCardProps {
     className?: string;
     comment: CommentI;
 }
@@ -26,7 +26,7 @@ export const CommentCard: FC<CommentCardProps> = ({ className, comment }) => {
                 <h2 className={cls.feedbackTitle}>{feedbackTitle}</h2>
                 <p className={cls.feedback}>{feedback}</p>
             </VStack>
-            <User user={user} />
+            <User user={user} className={cls.user} />
         </VStack>
     );
 };

@@ -3,6 +3,7 @@
     border: 1px solid var(--gray-color-15);
     border-radius: var(--card-border-radius);
     padding: 50px;
+    height: 442px;
 }
 
 .feedback {
@@ -11,4 +12,8 @@
     &Title {
         font-size: var(--font-size-xl);
     }
+}
+
+.user {
+    margin-top: auto;
 }

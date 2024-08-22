@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { StatsTabs } from './statsTabs';
 
 const meta = {
-    title: 'entities/StatsTabs',
+    title: 'widget/promo/StatsTabs',
     component: StatsTabs,
     parameters: {
         layout: 'centered',
