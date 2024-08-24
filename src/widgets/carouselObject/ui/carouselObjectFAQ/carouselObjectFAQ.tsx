@@ -1,5 +1,5 @@
 import { FAQCard, FAQProps } from 'entities/FAQ';
-import { CarouselObjectTemplate } from '../template/carouselObjectTemplate';
+import { CarouselObjectTemplate } from '../.template/carouselObjectTemplate';
 
 const questionsAnswers: FAQProps[] = [
     {

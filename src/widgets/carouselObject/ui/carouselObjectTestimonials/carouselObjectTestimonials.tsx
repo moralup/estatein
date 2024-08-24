@@ -1,6 +1,6 @@
 /* eslint-disable max-len */
 import { CommentCard } from 'entities/comment';
-import { CarouselObjectTemplate } from '../template/carouselObjectTemplate';
+import { CarouselObjectTemplate } from '../.template/carouselObjectTemplate';
 import ProfilePhotoWade from 'shared/assets/images/profile-photo-wade.png';
 import ProfilePhotoEmelie from 'shared/assets/images/profile-photo-emelie.png';
 import ProfilePhotoJohn from 'shared/assets/images/profile-photo-john.png';

@@ -2,7 +2,12 @@ import type { FC, ButtonHTMLAttributes } from 'react';
 import { clsx } from 'shared/lib/clsx';
 import cls from './button.module.scss';
 
-type ButtonThemeType = 'outline' | 'background' | 'grayBackground' | 'clear';
+type ButtonThemeType =
+    | 'outline'
+    | 'background'
+    | 'grayBackground'
+    | 'darkGrayBackground'
+    | 'clear';
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
     className?: string;

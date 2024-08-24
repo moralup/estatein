@@ -6,8 +6,6 @@ import {
     CarouselObjectTestimonials,
     CarouselObjectFAQ,
 } from 'widgets/carouselObject';
-import { CTA } from 'widgets/CTA';
-import { Footer } from 'widgets/footer/ui/footer';
 import cls from './homePage.module.scss';
 
 export const HomePage: FC = () => {
@@ -18,8 +16,6 @@ export const HomePage: FC = () => {
             <CarouselObjectProperties />
             <CarouselObjectTestimonials />
             <CarouselObjectFAQ />
-            <CTA />
-            <Footer />
         </div>
     );
 };

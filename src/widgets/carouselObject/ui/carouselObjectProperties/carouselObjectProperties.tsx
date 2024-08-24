@@ -1,5 +1,5 @@
 import { EstateCard } from 'entities/estate';
-import { CarouselObjectTemplate } from '../template/carouselObjectTemplate';
+import { CarouselObjectTemplate } from '../.template/carouselObjectTemplate';
 import { FC } from 'react';
 
 export const CarouselObjectProperties: FC<{ className?: string }> = ({ className }) => {

@@ -12,7 +12,7 @@ export const StatsTabs: FC<StatsTabsProps> = ({ className }) => {
     return (
         <div className={clsx(cls.tabs, className)}>
             {stats.map(({ description, title }) => (
-                <Tab mini>
+                <Tab key={title} mini>
                     <h3 className={cls.title}>{title}</h3>
                     <p className={cls.desc}>{description}</p>
                 </Tab>
