@@ -7,15 +7,18 @@ import {
     CarouselObjectFAQ,
 } from 'widgets/carouselObject';
 import cls from './homePage.module.scss';
+import { clsx } from 'shared/lib/clsx';
 
 export const HomePage: FC = () => {
     return (
-        <div className={cls.homePage}>
+        <>
             <Promo />
             <ServicesRange />
-            <CarouselObjectProperties />
-            <CarouselObjectTestimonials />
-            <CarouselObjectFAQ />
-        </div>
+            <div className={clsx(cls.pageContent)}>
+                <CarouselObjectProperties />
+                <CarouselObjectTestimonials />
+                <CarouselObjectFAQ />
+            </div>
+        </>
     );
 };

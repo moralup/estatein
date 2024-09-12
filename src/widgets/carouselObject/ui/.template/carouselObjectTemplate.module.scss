@@ -1,38 +1,47 @@
-.widgetCarouselTemplateWrapper {
-    padding: 150px 162px 0 162px;
+@mixin indent($indent) {
+    .carouselList {
+        margin: 0 (-$indent);
+    }
+
+    .card {
+        margin: 0 $indent;
+    }
 }
 
-.widgetCarouselTemplate {
-    position: relative;
+@include mobile() {
+    @include indent(10px);
+
+    .template {
+        position: relative;
+        padding-bottom: 6px;
+    }
+
+    .btnViewAll {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+    }
 }
 
-.reverted {
-    transform: rotate(180deg);
+@include tablet() {
+    .template {
+        padding-bottom: 0;
+    }
+
+    .textContainer {
+        position: relative;
+    }
+
+    .btnViewAll {
+        left: auto;
+        right: 0;
+    }
 }
 
-.title {
-    font-size: var(--font-size-xxxl);
-}
+@include desktop_extra_extra() {
+    @include indent(15px);
 
-.footer {
-    padding-top: 16px;
-    border-top: 1px solid var(--gray-color-15);
-}
-
-.btnViewAll {
-    margin-top: auto;
-}
-
-.deltoids {
-    position: absolute;
-    top: -40px;
-    left: -20px;
-}
-
-.description {
-    // white-space: pre-wrap;
-    // width: 85%;
-}
-.quantity {
-    font-size: var(--font-size-l)
+    .template {
+        padding-bottom: 2px;
+    }
 }

@@ -1,20 +1,83 @@
-.estateCard {
-    // width: 512px;
-    width: 512px;
-    padding: 40px;
-    border: 1px var(--gray-color-15) solid;
-    border-radius: var(--card-border-radius);
+@include mobile() {
+    .card {
+        gap: 18px;
+        height: 100%;
+        align-items: normal;
+    }
+
+    .estateImage {
+        width: 100%;
+        aspect-ratio: 64 / 43;
+        max-height: 255px;
+        border-radius: var(--image-border-radius);
+        object-fit: cover;
+    }
+    
+    .estateSummary {
+        gap: 2px;
+        margin-bottom: auto;
+    }
+
+    .estateDetails {
+        gap: 19px;
+        height: 100%;
+    }
+
+    .footer {
+        gap: 31px;
+    }
 }
 
-.img {
-    width: 432px;
-    height: 318px;
-    border-radius: var(--image-border-radius);
-    pointer-events: none;
+@include laptop() {
+    .card {
+        gap: 20px;
+        // padding-bottom: 24px;
+    }
+
+    .estateImage {
+        max-height: 330px;
+    }
+
+    .estateDetails {
+        gap: 24px;
+    }
+
+    .estateSummary {
+        gap: 4px;
+        margin-bottom: auto;
+    }
+
+    .estateImage {
+        aspect-ratio: 32 / 23;
+    }
+
+    .priceLabel {
+        font-size: 14px;
+    }
+
+    .footer {
+        gap: 40px;
+    }
 }
 
-.price,
-.title {
-    color: var(--absolute-color-white);
-    font-size: var(--font-size-xl);
+@include desktop_extra_extra() {
+    .card {
+        gap: 36px;
+    }
+
+    .estateDetails {
+        gap: 28px;
+    }
+
+    .estateSummary {
+        gap: 10px;
+    }
+
+    .priceLabel {
+        font-size: 18px;
+    }
+
+    .footer {
+        gap: 50px;
+    }
 }

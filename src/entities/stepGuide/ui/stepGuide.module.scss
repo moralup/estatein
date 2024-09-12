@@ -1,0 +1,25 @@
+.title {
+    font-size: 26px;
+}
+
+.step {
+    display: block;
+    font-size: 20px;
+    padding: 16px 20px;
+    border-left: 1px solid var(--primary-color-60);
+    color: var(--absolute-color-white);
+}
+
+.textContent {
+    width: 512px;
+    height: 267px;
+    padding: 50px;
+    gap: 20px;
+    border-radius: var(--card-border-radius);
+    border-top-left-radius: 0;
+    border: 1px solid transparent;
+    background:
+        linear-gradient(140deg, var(--primary-color-60) -55%, var(--gray-color-08) 14%) padding-box,
+        linear-gradient(140deg, var(--primary-color-60) 0%, var(--gray-color-15) 25%) border-box;
+}
+

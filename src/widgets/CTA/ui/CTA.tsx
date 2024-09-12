@@ -14,14 +14,10 @@ interface CTAProps {
 
 export const CTA: FC<CTAProps> = ({ className }) => {
     return (
-        <HStack
+        <div
             className={clsx(cls.CTA, className)}
-            justify="between"
         >
-            <VStack
-                gap={14}
-                className={cls.textContent}
-            >
+            <VStack className={cls.textContent}>
                 <h2 className={cls.title}>
                     Start Your Real Estate Journey Today
                 </h2>
@@ -37,11 +33,16 @@ export const CTA: FC<CTAProps> = ({ className }) => {
             <Button theme="background">Explore Properties</Button>
             <AbstractDesignTiles className={clsx(cls.design, cls.designLeft)} />
             <AbstractDesignTiles
-                width="566"
-                height="308"
-                viewBox="48 -32 367 200"
+                // viewBox="48 -32 367 200"
                 className={clsx(cls.design, cls.designRight)}
             />
-        </HStack>
+        </div>
     );
 };
+
+/* <AbstractDesignTiles
+width="566"
+height="308"
+viewBox="48 -32 367 200"
+className={clsx(cls.design, cls.designRight)}
+/> */

@@ -1,11 +1,35 @@
+.tagList {
+    gap: 6px;
+    flex-wrap: wrap;
+    margin-bottom: auto;
+}
+
 .tag {
     background: var(--gray-color-10);
     border: 1px solid var(--gray-color-15);
     border-radius: var(--tag-border-radius);
-    padding: 7px 14px;
+    padding: 4px 14px 6px 12px;
+    text-wrap: nowrap;
+}
+.loyalValue {
+    font-size: 14px;
+    color: var(--absolute-color-white);
+}
+.icon {
+    width: 22px;
+    height: 22px;
+}
 
-    .loyalValue {
-        color: var(--absolute-color-white);
+@include desktop_extra_extra() {
+    .tagList {
+        gap: 10px;
     }
 
+    .tag {
+        padding: 8px 14px;
+    }
+
+    .loyalValue {
+        font-size: 18px;  
+    }
 }

@@ -1,9 +1,9 @@
 import type { ServiceI } from './types';
 
-import RoundCameraIcon from 'shared/assets/icons/round-camera-icon.svg';
-import RoundHousesIcon from 'shared/assets/icons/round-houses-icon.svg';
-import RoundHouseIcon from 'shared/assets/icons/round-house-icon.svg';
-import RoundSunIcon from 'shared/assets/icons/round-sun-icon.svg';
+import RoundCameraIcon from 'shared/assets/icons/services-range/round-camera-icon.svg';
+import RoundHousesIcon from 'shared/assets/icons/services-range/round-houses-icon.svg';
+import RoundHouseIcon from 'shared/assets/icons/services-range/round-house-icon.svg';
+import RoundSunIcon from 'shared/assets/icons/services-range/round-sun-icon.svg';
 
 export const services: ServiceI[] = [
     {

@@ -1,1 +1,1 @@
-export { Promo } from './ui/promo/promo';
+export { Promo } from './ui/promoHome/promo';

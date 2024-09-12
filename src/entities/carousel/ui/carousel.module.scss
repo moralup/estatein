@@ -1,0 +1,64 @@
+@include mobile() {
+    .carousel {
+        gap: 30px;
+    }
+
+    .arrowIcon {
+        width: 24px;
+        height: 24px;
+
+        &__rotated {
+            transform: rotate(180deg);
+        }
+    }
+
+    .navigation {
+        &__fullWidth {
+            justify-content: space-between;
+        }
+
+        &__right {
+            border-top: 1px solid var(--gray-color-15);
+            gap: 10px;
+            padding-top: 15px;
+
+            .btnArrow:first-child {
+                margin-left: auto;
+            }
+        }
+    }
+}
+
+@include tablet() {
+    .counter {
+        position: absolute;
+        left: 0;
+        bottom: 18px;
+    }
+}
+
+@include laptop() {
+    .carousel {
+        gap: 40px;
+    }
+}
+
+@include desktop_extra_extra() {
+    .carousel {
+        gap: 50px;
+    }
+
+    .navigation {
+        padding-top: 20px;
+    }
+
+    .arrowIcon {
+        width: 28px;
+        height: 28px;
+    }
+
+    .counter {
+        font-size: 20px;
+        bottom: 30px;
+    }
+}

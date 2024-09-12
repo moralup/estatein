@@ -1,16 +1,118 @@
-* {
-    font: var(--font-main);
-    color: var(--gray-color-60);
-    font-weight: var(--font-weight-medium);
-    // outline: 3px solid green;
+@mixin titles($sizes...) {
+    @for $i from 0 to length($sizes) {
+        h#{$i + 1} {
+            color: var(--absolute-color-white);
+            font-weight: var(--font-weight-semi-bold);
+            font-size: #{nth($sizes, $i + 1)};
+            line-height: 1.5;
+        }
+    }
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-    color: var(--absolute-color-white);
-    font-weight: var(--font-weight-semi-bold);
+@mixin texts($size, $tags...) {
+    @for $i from 0 to length($tags) {
+        #{nth($tags, $i + 1)} {
+            font-size: $size;
+            line-height: 150%;
+            color: var(--gray-color-60);
+            font-weight: var(--font-weight-medium);
+        }
+    }
+}
+
+@include mobile() {
+    @include titles(28px, 28px, 18px);
+    @include texts(
+        14px,
+        'input',
+        'textarea',
+        'button',
+        'p',
+        'a',
+        'address',
+        'label',
+        'span',
+        'div',
+        'li'
+    );
+    @include texts(16px, 'label');
+    :root {
+        --new-font-size-m: 14px;
+    }
+}
+@include laptop() {
+    @include titles(46px, 38px, 20px);
+    @include texts(16px, 'p', 'a', 'address', 'span', 'div', 'li');
+    :root {
+        --new-font-size-m: 16px;
+    }
+}
+@include desktop_extra_extra() {
+    @include titles(60px, 48px, 24px);
+    @include texts(
+        18px,
+        'p',
+        'a',
+        'address',
+        'input',
+        'textarea',
+        'span',
+        'div',
+        'button',
+        'li'
+    );
+    @include texts(20px, 'label');
+}
+
+* {
+    font-family: var(--font-family);
+}
+
+@include mobile() {
+    :root {
+        --vertical-indent: 16px; // Oтступ для мобильного
+        --negative-vertical-indent: -16px; // Oтступ для мобильного
+    }
+}
+
+@include mobile_landscape() {
+    :root {
+        --vertical-indent: 24px; // Oтступ для мобильного в ландшафтной ориентации
+        --negative-vertical-indent: -24px; // Oтступ для мобильного в ландшафтной ориентации
+    }
+}
+
+@include tablet() {
+    :root {
+        --vertical-indent: 32px; // Отступ для планшетов
+        --negative-vertical-indent: -32px; // Отступ для планшетов
+    }
+}
+
+@include laptop() {
+    :root {
+        --vertical-indent: 48px; // Отступ для ноутбуков
+        --negative-vertical-indent: -48px; // Отступ для ноутбуков
+    }
+}
+
+@include desktop() { // !1200px
+    :root {
+        --vertical-indent: 60px; // Отступ для десктопов
+        --negative-vertical-indent: -60px; // Отступ для десктопов
+    }
+}
+
+@include desktop_extra() { // !1400px
+    :root {
+        --vertical-indent: 80px;
+        --negative-vertical-indent: -80px;
+    }
+}
+
+@include desktop_extra_extra() { // !1700px
+    :root {
+        --vertical-indent: 162px; // Максимальный отступ для очень больших экранов
+        --negative-vertical-indent: -162px; // Максимальный отступ для очень больших экранов
+    }
 }

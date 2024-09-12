@@ -2,6 +2,7 @@
 @import "variables";
 @import "fonts";
 @import "global";
+@import "./mixins";
 
 body {
     background-color: var(--gray-color-08);

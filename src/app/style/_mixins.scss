@@ -1,0 +1,4 @@
+@mixin titleFont($size, $weight: var(--font-weight-semi-bold)) {
+    font-size: $size;
+    font-weight: $weight;
+}

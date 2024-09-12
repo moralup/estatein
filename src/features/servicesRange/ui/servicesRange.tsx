@@ -2,8 +2,8 @@ import type { FC } from 'react';
 
 import { services } from '../model/consts';
 
-import { Tab } from 'shared/ui/tab';
-import { HStack } from 'shared/ui/stack';
+import { Card } from 'shared/ui/card';
+import ArrowIcon from 'shared/assets/icons/arrow-up-right.svg';
 
 import { clsx } from 'shared/lib/clsx';
 import cls from './servicesRange.module.scss';
@@ -14,19 +14,22 @@ interface ServicesRangeProps {
 
 export const ServicesRange: FC<ServicesRangeProps> = ({ className }) => {
     return (
-        <HStack
-            gap={20}
-            className={clsx(cls.servicesRange, className)}
+        <Card
+            theme="outline"
+            className={clsx(cls.list, className)}
         >
             {services.map(({ Icon, text }) => (
-                <Tab
+                <Card
+                    background="gray-10"
                     key={text}
                     justify="center"
+                    className={cls.card}
                 >
-                    <Icon />
+                    <ArrowIcon className={cls.arrowIcon} />
+                    <Icon className={cls.icon} />
                     <span className={cls.text}>{text}</span>
-                </Tab>
+                </Card>
             ))}
-        </HStack>
+        </Card>
     );
 };

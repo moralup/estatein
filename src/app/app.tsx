@@ -3,8 +3,8 @@ import { AppRouter } from './router';
 
 export const App = () => {
     return (
-        <StrictMode>
-            <AppRouter />
-        </StrictMode>
+        // <StrictMode>
+        <AppRouter />
+        // </StrictMode>
     );
 };

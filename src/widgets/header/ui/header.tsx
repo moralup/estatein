@@ -1,64 +1,53 @@
 import { FC } from 'react';
 
+import { routes } from '../model/const';
+
+import { Card } from 'shared/ui/card';
 import { Button } from 'shared/ui/button';
 import { NavLink, type NavLinkRenderProps } from 'react-router-dom';
 
 import Logo from 'shared/assets/icons/logo.svg';
+import Burger from 'shared/assets/icons/burger-icon.svg';
 
 import { clsx } from 'shared/lib/clsx';
 import cls from './header.module.scss';
-import { HStack } from 'shared/ui/stack';
 
 interface HeaderProps {
     className?: string;
 }
-
-const routes = [
-    {
-        label: 'Home',
-        link: '/home',
-    },
-    {
-        label: 'About Us',
-        link: '/about',
-    },
-    {
-        label: 'Properties',
-        link: '/properties',
-    },
-    {
-        label: 'Services',
-        link: '/services',
-    },
-];
 
 export const Header: FC<HeaderProps> = ({ className }) => {
     const getNavLinkCls = ({ isActive }: NavLinkRenderProps) => {
         if (isActive) {
             return `${cls.navLinkActive} ${cls.navLink}`;
         }
-        // Active
         return cls.navLink;
     };
 
     return (
-        <HStack
+        <Card
+            direction="row"
+            background="gray-10"
+            border="bottom"
             justify="between"
             className={clsx(cls.header, className)}
         >
-            <Logo />
-            <nav className={cls.nav}>
-                {routes.map(({ label, link }) => (
-                    <NavLink
-                        to={link}
-                        key={link}
-                        className={getNavLinkCls}
-                    >
-                        {label}
-                    </NavLink>
-                ))}
-            </nav>
-            <Button theme="darkGrayBackground">Contact Us</Button>
-        </HStack>
+            <Logo className={cls.logo} />
+            <div className={cls.links}>
+                <nav className={cls.nav}>
+                    {routes.map(({ label, path }) => (
+                        <NavLink
+                            to={path}
+                            key={path}
+                            className={getNavLinkCls}
+                        >
+                            {label}
+                        </NavLink>
+                    ))}
+                </nav>
+                <Button theme="darkGrayBackground">Contact Us</Button>
+            </div>
+            <Burger className={cls.burger} />
+        </Card>
     );
 };

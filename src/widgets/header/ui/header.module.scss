@@ -1,32 +1,102 @@
-.header {
-    padding: 20px 162px;
-    background: var(--gray-color-10);
-    border-bottom: 1px solid var(--gray-color-15);
-}
-
-.nav {
-    display: flex;
-    gap: 30px;
-    padding-right: 25px;
-}
-
-.navLink {
-    color: var(--absolute-color-white);
-    padding: 14px 0;
-    transition: all .5s ease;
-    border-radius: 10px;
-    
-    &Active {
-        padding: 14px 24px;
-        background: var(--gray-color-08);
-        border: 1px solid var(--gray-color-15);
-    }
-    
-    &:hover {
-        // border-radius: 20px;
-        border: 1px solid var(--gray-color-10);
-        padding: 14px 24px;
-        // background: var(--gray-color-08);
+@include mobile() {
+    .header {
+        padding: 20px 16px;
     }
 
+    .logo {
+        width: 94px;
+        height: 28px;
+    }
+
+    .links {
+        display: none;
+        // position: absolute;
+        // top: 100px;
+
+        // &,
+        // & .nav {
+        //     display: flex;
+        //     flex-direction: column;
+        //     margin: auto;
+
+        //     * {
+        //         background: inherit;
+        //         border: 0;
+        //         color: var(--absolute-color-white);
+        //         padding: 14px;
+        //     }
+        // }
+    }
+}
+
+@include tablet() {
+    .header {
+        padding: 12px 80px;
+    }
+
+    .logo {
+        width: 113px;
+        height: 34px;
+    }
+
+    .links {
+        display: contents;
+    }
+
+    .burger {
+        display: none;
+    }
+
+    .nav {
+        display: flex;
+        gap: 24px;
+        align-items: center;
+        padding-right: 2px;
+        letter-spacing: 0.1px;
+    }
+
+    .navLink {
+        font-size: 14px;
+        padding: 14px 0;
+        color: var(--absolute-color-white);
+        transition: all 0.5s ease;
+        border-radius: 10px;
+
+        &Active {
+            padding: 12px 20px;
+            background: var(--gray-color-08);
+            outline: 1px solid var(--gray-color-15);
+        }
+
+        &:hover {
+            padding: 12px 20px;
+            outline: 1px solid var(--gray-color-10);
+        }
+    }
+}
+
+@include desktop_extra_extra() {
+    .header {
+        padding: 20px 162px;
+    }
+
+    .logo {
+        width: 160px;
+        height: 48px;
+    }
+
+    .nav {
+        gap: 30px;
+        padding-right: 25px;
+    }
+
+    .navLink {
+        padding: 14px 0;
+        font-size: 18px;
+
+        &Active,
+        &:hover {
+            padding: 14px 24px;
+        }
+    }
 }

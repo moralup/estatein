@@ -1,0 +1,25 @@
+@mixin carousel($outline_width, $side_indent, $top_indent) {
+    div.container {
+        gap: $top_indent;
+    }
+
+    .carouselList {
+        margin: 0 (-$side_indent) (-$outline_width) (-$side_indent);
+    }
+
+    .card {
+        margin: $outline_width $side_indent;
+    }
+}
+
+@include mobile() {
+    @include carousel(6px, 15px, 34px);
+}
+
+@include laptop() {
+    @include carousel(8px, 20px, 50px);
+}
+
+@include desktop_extra_extra() {
+    @include carousel(8px, 25px, 70px);
+}

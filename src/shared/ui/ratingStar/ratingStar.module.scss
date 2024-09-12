@@ -1,13 +1,48 @@
-.star {
-    width: 44px;
-    height: 44px;
-    border-radius: 50%;
-    fill: var(--gray-color-60);
-    background: var(--gray-color-10);
-    border: solid 1px var(--gray-color-15);
+@include mobile() {
+    .stars {
+        gap: 10px;
+    }
+
+    .starContainer {
+        padding: 6px;
+        border-radius: 50%;
+        fill: var(--gray-color-60);
+        background: var(--gray-color-10);
+        outline: solid 1px var(--gray-color-15);
+    }
+
+    .active {
+        fill: var(--star-color);
+    }
+
+    .starIcon {
+        width: 16px;
+        height: 16px;
+    }
 }
 
-.active {
-    fill: var(--star-color);
+@include laptop() {
+    .starContainer {
+        padding: 9px;
+    }
+
+    .starIcon {
+        width: 18px;
+        height: 18px;
+    }
 }
 
+@include desktop_extra_extra() {
+    .stars {
+        gap: 8px;
+    }
+
+    .starContainer {
+        padding: 10px 12px;
+    }
+
+    .starIcon {
+        width: 22px;
+        height: 22px;
+    }
+}

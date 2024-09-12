@@ -1,14 +1,10 @@
+import type { FC, FormEventHandler, ChangeEventHandler } from 'react';
 import { useState } from 'react';
-import type {
-    FC,
-    FormEventHandler,
-    ChangeEventHandler,
-} from 'react';
 
 import { HStack } from 'shared/ui/stack';
 import { Button } from 'shared/ui/button';
 
-import PaperAirplaneIcon from 'shared/assets/icons/paper-airplane-icon.svg';
+import TelegramIcon from 'shared/assets/icons/telegram-icon.svg';
 import MessageIcon from 'shared/assets/icons/message-icon.svg';
 
 import { clsx } from 'shared/lib/clsx';
@@ -48,21 +44,20 @@ export const SendEmail: FC<SendEmailProps> = props => {
                 onBlur={() => setIsFocus(false)}
             />
             <HStack
-                gap={10}
                 className={clsx(
                     cls.placeholder,
                     isActive && cls.placeholder__active,
                 )}
             >
-                <MessageIcon />
-                <span>Enter Your Email</span>
+                <MessageIcon className={cls.messageIcon} />
+                <span className={cls.placeholderText}>Enter Your Email</span>
             </HStack>
             <Button
                 type="submit"
                 theme="clear"
                 className={cls.btnSend}
             >
-                <PaperAirplaneIcon />
+                <TelegramIcon className={cls.telegramIcon} />
             </Button>
         </form>
     );

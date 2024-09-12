@@ -1,35 +1,109 @@
-.CTA {
-    position: relative;
-    padding: 100px 162px;
-    margin-top: 96px;
+@mixin horizon_padding($padding) {
+    padding-top: $padding;
+    padding-bottom: $padding;
 }
 
-.textContent {
-    width: 73%;
-}
-
-.title {
-    font-size: var(--font-size-xxxl);
-}
-
-.design {
-    position: absolute;
-    fill: var(--gray-color-10);
-    bottom: 0;
-    width: 566px;
-    height: 308px;
-    overflow: hidden;
-    z-index: -1;
-
-    &Left {
-        left: -20px;
+@include mobile() {
+    .CTA {
+        display: flex;
+        gap: 30px;
+        flex-direction: column;
+        justify-content: space-between;
+        position: relative;
+        padding: 50px var(--vertical-indent);
+        overflow: hidden;
     }
 
-    &Right {
-        right: 0;
+    .textContent {
+        // opacity: 0;
+        gap: 6px;
+    }
+
+    .design {
+        position: absolute;
+        fill: var(--gray-color-10);
         bottom: 0;
-        transform: scale(-1, 1);
-        width: 725px;
-        height: 394px;
+        overflow: hidden;
+        z-index: -1;
+
+        &Left {
+            width: 522px;
+            height: 284px;
+            transform: rotate(90deg);
+            left: -140px;
+            top: 10px;
+        }
+
+        &Right {
+            transform: scale(-1, 1);
+            width: 398px;
+            height: 217px;
+
+            right: -100px;
+            right: -50px;
+            bottom: -50px;
+        }
+    }
+}
+
+@include tablet() {
+    .CTA {
+        @include horizon_padding(60px);
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .textContent {
+        width: 76%;
+        gap: 10px;
+    }
+
+    .design {
+        width: 474px;
+        height: 258px;
+
+        &Left {
+            left: 0px;
+            top: auto;
+            transform: none;
+        }
+
+        &Right {
+            transform: scale(-1, 1);
+            right: -15px;
+            bottom: -20px;
+
+            width: 569px;
+            height: 310px;
+        }
+    }
+}
+
+@include desktop_extra_extra() {
+    .CTA {
+        @include horizon_padding(100px);
+        // margin-top: 96px;
+    }
+
+    .textContent {
+        width: 71%;
+        gap: 14px;
+    }
+
+    .design {
+        width: 566px;
+        height: 308px;
+
+        &Left {
+            left: -20px;
+        }
+
+        &Right {
+            right: -92px;
+            bottom: -62px;
+            transform: scale(-1, 1);
+            width: 725px;
+            height: 394px;
+        }
     }
 }

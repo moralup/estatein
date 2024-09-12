@@ -13,17 +13,17 @@ const stars = [1, 2, 3, 4, 5];
 
 export const RatingStar: FC<RatingStarProps> = ({ className, rating = 0 }) => {
     return (
-        <HStack
-            gap={10}
-            className={className}
-        >
+        <HStack className={clsx(cls.stars, className)}>
             {stars.map(star => (
                 <HStack
                     justify="center"
                     key={star}
-                    className={clsx(cls.star, star <= rating && cls.active)}
+                    className={clsx(
+                        cls.starContainer,
+                        star <= rating && cls.active,
+                    )}
                 >
-                    <StarIcon />
+                    <StarIcon className={cls.starIcon} />
                 </HStack>
             ))}
         </HStack>

@@ -1,19 +1,80 @@
-.commentCard {
-    width: 512px;
-    border: 1px solid var(--gray-color-15);
-    border-radius: var(--card-border-radius);
-    padding: 50px;
-    height: 442px;
-}
+@mixin card_view_row() {
+    .user {
+        position: absolute;
+    }
 
-.feedback {
-    color: var(--absolute-color-white);
-
-    &Title {
-        font-size: var(--font-size-xl);
+    .stars {
+        margin-left: auto;
+        margin-bottom: 10px;
     }
 }
 
-.user {
-    margin-top: auto;
+@mixin card_view_column() {
+    .user {
+        position: static;
+    }
+
+    .stars {
+        margin-left: 0;
+        margin-bottom: 0;
+    }
+}
+
+@include mobile() {
+    .commentCard {
+        gap: 26px;
+        height: 100%;
+    }
+
+    .feedbackContainer {
+        gap: 4px;
+        margin-bottom: auto;
+    }
+
+    .feedback {
+        color: var(--absolute-color-white);
+
+        &Title {
+            color: var(--absolute-color-white);
+            font-size: 18px;
+            letter-spacing: 0.1px;
+        }
+    }
+}
+
+@include mobile_landscape() {
+    @include card_view_row();
+}
+
+@include tablet() {
+    @include card_view_column();
+}
+
+@include laptop() {
+    .commentCard {
+        gap: 30px;
+    }
+
+    .feedbackContainer {
+        gap: 10px;
+    }
+
+    .feedbackTitle {
+        color: var(--absolute-color-white);
+        font-size: 20px;
+    }
+}
+
+@include desktop_extra_extra() {
+    .commentCard {
+        gap: 40px;
+    }
+
+    .feedbackContainer {
+        gap: 14px;
+    }
+
+    .feedbackTitle {
+        font-size: 24px;
+    }
 }

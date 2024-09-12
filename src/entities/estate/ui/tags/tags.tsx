@@ -3,6 +3,7 @@ import type { EstateTagI } from '../../model/types/estate';
 import { tagIconMap } from '../../model/consts/tags';
 import { HStack } from 'shared/ui/stack';
 import cls from './tags.module.scss';
+import { clsx } from 'shared/lib/clsx';
 
 interface TagsProps {
     className?: string;
@@ -19,7 +20,7 @@ const renderTag = ({ value, quantity }: EstateTagI) => {
             gap={4}
             className={cls.tag}
         >
-            {Icon && <Icon />}
+            {Icon && <Icon className={cls.icon} />}
             <span className={cls.loyalValue}>{loyalValue}</span>
         </HStack>
     );
@@ -27,7 +28,7 @@ const renderTag = ({ value, quantity }: EstateTagI) => {
 
 export const Tags: FC<TagsProps> = ({ className, tags }) => {
     return (
-        <HStack gap={10} className={className}>
+        <HStack className={clsx(cls.tagList, className)}>
             {tags.map(renderTag)}
         </HStack>
     );

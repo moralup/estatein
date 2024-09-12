@@ -1,3 +1,24 @@
-body {
-    width: 1920px;
+.pageContent {
+    display: flex;
+    flex-direction: column;
+    gap: 79px;
+    margin: 80px var(--vertical-indent);
 }
+
+@include laptop() {
+    .pageContent {
+        display: flex;
+        flex-direction: column;
+        gap: 120px;
+        margin: 120px var(--vertical-indent) 68px;
+    }    
+}
+
+@include desktop_extra_extra() {
+    .pageContent {
+        margin-top: 150px;
+        margin-bottom: 96px;
+        gap: 150px;
+    }
+}
+

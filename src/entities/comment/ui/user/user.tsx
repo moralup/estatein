@@ -2,6 +2,7 @@ import { FC } from 'react';
 import { HStack, VStack } from 'shared/ui/stack';
 import cls from './user.module.scss';
 import { UserI } from '../../model/types';
+import { clsx } from 'shared/lib/clsx';
 
 interface UserProps {
     className?: string;
@@ -9,11 +10,11 @@ interface UserProps {
 }
 
 export const User: FC<UserProps> = ({ className, user }) => (
-    <HStack gap={12} className={className}>
+    <HStack className={clsx(cls.user, className)}>
         <img src={user.image} alt="user" className={cls.photo} />
-        <VStack gap={2}>
+        <VStack className={cls.userInfo}>
             <span className={cls.name}>{user.name}</span>
-            <span>{user.address}</span>
+            <span className={cls.address}>{user.address}</span>
         </VStack>
     </HStack>
 );

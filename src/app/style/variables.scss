@@ -1,10 +1,26 @@
 :root {
-    //! - -  Fonts  - - - - - - -
-
-    //* Lines
+    /* Font */
     --font-line: 150%;
 
-    //* Sizes
+    /*
+        ! STAR
+    */
+
+    // --font-size-s: 12px;
+    --font-size-mobile-m: 14px;
+    // --font-size-mobile-l: 18px;
+    // --font-size-mobile-xl: 18px;
+    
+    
+    // --font-size-mobile-s: 12px;
+    // --font-size-mobile-m: 16px;
+    // --font-size-mobile-l: 18px;
+    // --font-size-mobile-xl: 18px;
+
+    /*
+        ! END
+    */
+
     --font-size-m: 18px;
     --font-size-l: 20px;
     --font-size-xl: 24px;
@@ -12,23 +28,19 @@
     --font-size-xxxl: 48px;
     --font-size-xxxxl: 60px;
 
-    //* Weights
     --font-weight-regular: 400;
     --font-weight-medium: 500;
     --font-weight-semi-bold: 600;
     --font-weight-bold: 700;
 
-    //* Main
-    --font-family-main: Urbanist, 'Times New Roman', serif;
+    --font-family: Urbanist, 'Times New Roman', serif;
     --font-main: var(--font-size-m) / var(--font-line) var(--font-family-main);
 
-    //! - -  Color  - - - - - - -
+    /* Color */
 
-    //* Absolute
     --absolute-color-white: #fff;
     --absolute-color-black: #000;
 
-    //* Primary
     --primary-color-60: #703bf7;
     --primary-color-65: #8254f8;
     --primary-color-70: #946cf9;
@@ -39,13 +51,11 @@
     --primary-color-97: #f4f0fe;
     --primary-color-99: #fbfaff;
 
-    //* Color Light
     --light-color-90: #e4e4e7;
     --light-color-95: #f1f1f3;
     --light-color-97: #f7f7f8;
     --light-color-99: #fcfcfd;
 
-    //* Color Gray
     --gray-color-08: #141414;
     --gray-color-10: #1a1a1a;
     --gray-color-15: #262626;
@@ -55,20 +65,10 @@
     --gray-color-50: #808080;
     --gray-color-60: #999999;
 
-    //* Other Colors
+    --star-color: #ffe500;
 
-    --star-color: #FFE500;
-
-    //! - -  Other  - - - - - - -
-
+    /* Border Radius */
     --card-border-radius: 12px;
     --image-border-radius: 10px;
     --tag-border-radius: 28px;
 }
-
-// --font-family-main: Urbanist, "Times New Roman", serif;
-// --font-m: var(--font-size-m) / var(--font-line-m) var(--font-family-main);
-// font-family: Urbanist;
-// font-weight: 500;
-// font-size: clamp(28px, 2.64vw, 48px);
-// font-size: clamp(14px, calc(100vw / 90), 18px);

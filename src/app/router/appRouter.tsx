@@ -19,7 +19,7 @@ type RoutesMapType = {
     [key in RouteLinksType]: JSX.Element;
 };
 
-export const routesMap: RoutesMapType = {
+const routesMap: RoutesMapType = {
     '/': <Navigate to="home" />,
     about: <AboutPage />,
     contact: <ContactPage />,
@@ -29,7 +29,7 @@ export const routesMap: RoutesMapType = {
     services: <ServicesPage />,
 };
 
-export const routes = Object.keys(routesMap).map(
+const routes = Object.keys(routesMap).map(
     (route): RouteObject => ({
         path: route,
         element: routesMap[route as RouteLinksType],

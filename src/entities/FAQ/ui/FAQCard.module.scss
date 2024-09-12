@@ -1,13 +1,60 @@
-.faq {
-    width: 512px;
-    padding: 50px;
-    border: 1px solid var(--gray-color-15);
-    border-radius: var(--card-border-radius);
+@mixin heightByNumberOfLines(
+    $numberOfLines,
+    $fontSize: var(--new-font-size-m)
+) {
+    $lineHeight: calc($fontSize * 1.5);
+    $height: calc($lineHeight * $numberOfLines);
+    min-height: $height;
 }
 
-.question {
-    font-size: var(--font-size-xl);
-    letter-spacing: 0.1px;
-    // размер шрифта * 2 стросчки * 150% line-height 
-    min-height: calc(var(--font-size-xl) * 3);
+@include mobile() {
+    .card {
+        gap: 20px;
+        align-items: normal;
+        height: 100%;
+    }
+
+    .question {
+        color: var(--absolute-color-white);
+        font-size: 18px;
+        letter-spacing: 0.05px;
+        margin-bottom: auto;
+    }
+
+    .answer {
+        letter-spacing: -0.1px;
+    }
+
+    .btnReadMore {
+        line-height: 1.21;
+    }
+}
+
+@include mobile_landscape() {
+    .card {
+        align-items: start;
+    }
+}
+
+@include laptop() {
+    .card {
+        padding-right: 39px;
+        gap: 24px;
+    }
+
+    .question {
+        font-size: 20px;
+        letter-spacing: 0.1px;
+    }
+}
+
+@include desktop_extra_extra() {
+    .card {
+        padding: 50px;
+        gap: 30px;
+    }
+
+    .question {
+        font-size: 24px;
+    }
 }
