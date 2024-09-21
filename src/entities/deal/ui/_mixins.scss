@@ -1,0 +1,120 @@
+@mixin main_font_size($size) {
+    .feedbackLabel,
+    .feedback,
+    .since,
+    .info {
+        font-size: $size;
+    }
+}
+
+@mixin vertical_view() {
+    @include main_font_size(14px);
+
+    .card {
+        padding: 24px;
+    }
+
+    .header {
+        flex-direction: column;
+        align-items: normal;
+    }
+
+    .company {
+        font-size: 20px;
+    }
+
+    .infoContainer {
+        gap: 4px;
+
+        .infoLabel {
+            font-size: 12px;
+            margin-left: 2px;
+        }
+
+        .infoLabelIcon {
+            width: 18px;
+            height: 18px;
+        }
+    }
+
+    .feedbackContainer {
+        padding: 20px;
+        gap: 13px;
+    }
+}
+
+@mixin horizon_view() {
+    @include main_font_size(16px);
+
+    .card {
+        padding: 40px;
+    }
+
+    .header {
+        justify-content: space-between;
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .company {
+        font-size: 24px;
+    }
+
+    .infoContainer {
+        gap: 8px;
+
+        .infoLabel {
+            font-size: 14px;
+            margin-left: 6px;
+        }
+
+        .infoLabelIcon {
+            width: 20px;
+            height: 20px;
+        }
+    }
+
+    .feedbackContainer {
+        padding: 22px;
+    }
+}
+
+@mixin horizon_big_view() {
+    @include main_font_size(18px);
+
+    .card {
+        padding: 50px;
+        gap: 40px;
+    }
+
+    .company {
+        font-size: 30px;
+    }
+
+    .infoContainer {
+        .info {
+            font-size: 20px;
+        }
+
+        .infoLabel {
+            font-size: 18px;
+        }
+
+        .infoLabelIcon {
+            width: 24px;
+            height: 24px;
+        }
+
+        &:last-child {
+            padding-left: 30px;
+        }
+
+        &:first-child {
+            flex: 1.12;
+        }
+    }
+
+    .feedbackContainer {
+        padding: 30px;
+    }
+}

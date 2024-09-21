@@ -1,9 +1,55 @@
-.wrap {
-    padding: 100px 6px 0px 0;
-    // padding: 98px 6px 100px 0;
+@include mobile() {
+    .section {
+        display: flex;
+        gap: 40px;
+        flex-direction: column-reverse;
+    }
+
+    .imgWrap {
+        width: 100%;
+        height: 310px;
+        overflow: hidden;
+        outline: 1px solid var(--gray-color-15);
+        border-radius: var(--card-border-radius);
+    }
+
+    .img {
+        width: 100%;
+        max-width: 500px;
+        height: 100%;
+        float: right;
+        object-fit: cover;
+    }
 }
 
-.img {
-    outline: 1px solid var(--gray-color-15);
-    border-radius: var(--card-border-radius);
+@include tablet() {
+    .sectionWrapper {
+        gap: 40px;
+    }
+
+    .section {
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .infoBlock,
+    .imgWrap {
+        flex: 1 1 0px;
+        height: auto;
+    }
+
+    .img {
+        max-width: none;
+    }
+}
+
+@include laptop() {
+    .section {
+        gap: 60px;
+    }
+}
+@include desktop_extra_extra() {
+    .section {
+        gap: 80px;
+    }
 }

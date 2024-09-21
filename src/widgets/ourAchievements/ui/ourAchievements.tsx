@@ -1,10 +1,8 @@
 /* eslint-disable max-len */
 import { FC } from 'react';
-// import { clsx } from 'shared/lib/clsx';
-import cls from './ourAchievements.module.scss';
 import { InfoBlock } from 'shared/ui/containerWithStars';
 import { Card } from 'shared/ui/card';
-import { HStack } from 'shared/ui/stack';
+import cls from './ourAchievements.module.scss';
 
 interface OurAchievementsProps {
     className?: string;
@@ -13,7 +11,8 @@ interface OurAchievementsProps {
 const arr: { title: string; description: string }[] = [
     {
         title: '3+ Years of Excellence',
-        description: "With over 3 years in the industry, we've amassed a wealth of knowledge and experience, becoming a go-to resource for all things real estate.",
+        // description: "With over 3 years in the industry, we've amassed a wealth of knowledge and experience, becoming a go-to resource for all things real estate.",
+        description: "With over 3 years in the industry, we've amassed a wealth of knowledge and experience",
     },
     {
         title: 'Happy Clients',
@@ -34,7 +33,7 @@ export const OurAchievements: FC<OurAchievementsProps> = () => {
             title="Our Achievements"
             textContainerClassName={cls.textContainer}
         >
-            <HStack gap={40}>
+            <div className={cls.cardList}>
                 {arr.map(({ description, title }) => (
                     <Card
                         theme="outline"
@@ -45,7 +44,7 @@ export const OurAchievements: FC<OurAchievementsProps> = () => {
                         <p>{description}</p>
                     </Card>
                 ))}
-            </HStack>
+            </div>
         </InfoBlock>
     );
 };

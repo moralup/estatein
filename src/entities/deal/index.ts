@@ -1,1 +1,1 @@
-export { Deal } from './ui/deal';
+export { DealCard } from './ui/dealCard';

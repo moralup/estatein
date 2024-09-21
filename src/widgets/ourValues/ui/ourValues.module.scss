@@ -1,0 +1,131 @@
+$border: 1px solid var(--gray-color-15);
+
+@mixin tabIndent($tablePadding, $tabPadding) {
+    .table {
+        padding: $tablePadding - $tabPadding;
+    }
+
+    .tabWrap {
+        padding: $tabPadding;
+
+        &:nth-child(2n) {
+            padding: $tabPadding 0;
+
+            .tab {
+                padding: 0 $tabPadding;
+            }
+        }
+    }
+}
+
+@include mobile() {
+    .section {
+        /** sb - space between */
+        --sb-infoBlock-and-table: 40px;
+        --sb-header-and-desc: 14px;
+        --sb-icon-and-title: 14px;
+
+        --icon-size: 52px;
+        --title-font-size: 18px;
+        --table-outline-width: 6px;
+
+        gap: var(--sb-infoBlock-and-table);
+    }
+
+    .table {
+        display: grid;
+        padding: 4px;
+        outline: var(--table-outline-width) solid var(--gray-color-10);
+        border-radius: var(--card-border-radius);
+    }
+
+    .tabWrap {
+        padding: 20px 0;
+        margin: 0 20px;
+        border-bottom: $border;
+
+        &:nth-child(4) {
+            border-bottom: none;
+        }
+    }
+
+    .tab {
+        gap: var(--sb-header-and-desc);
+    }
+
+    .tabHeader {
+        gap: var(--sb-icon-and-title);
+    }
+
+    .title {
+        font-size: var(--title-font-size);
+        color: var(--absolute-color-white);
+    }
+
+    .icon {
+        width: var(--icon-size);
+        height: var(--icon-size);
+    }
+}
+
+@include tablet() {
+    .table {
+        grid-template-columns: 50% 50%;
+    }
+
+    .tabWrap {
+        margin: 0;
+        padding: 20px;
+
+        &:nth-child(3) {
+            border-bottom: none;
+        }
+
+        &:nth-child(2n) {
+            padding: 20px 0;
+
+            .tab {
+                padding: 0 20px;
+                border-left: $border;
+            }
+        }
+    }
+}
+
+@include desktop() {
+    .section {
+        --sb-infoBlock-and-table: 60px;
+        --sb-header-and-desc: 16px;
+        --sb-icon-and-title: 10px;
+
+        --icon-size: 60px;
+        --title-font-size: 20px;
+        --table-outline-width: 8px;
+
+        flex-direction: row;
+        align-items: center;
+    }
+
+    @include tabIndent(50px, 24px);
+
+    .textContainer {
+        width: 57%;
+    }
+}
+
+@include desktop_extra_extra() {
+    .section {
+        --sb-infoBlock-and-table: 80px;
+        --sb-header-and-desc: 20px;
+        --sb-icon-and-title: 14px;
+
+        --icon-size: 75px;
+        --title-font-size: 24px;
+    }
+
+    .textContainer {
+        width: 52%;
+    }
+
+    @include tabIndent(60px, 30px);
+}

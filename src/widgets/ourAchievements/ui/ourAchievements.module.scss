@@ -1,12 +1,57 @@
-.card {
-    padding: 50px;
-    gap: 30px
+@include mobile() {
+    .cardList {
+        display: flex;
+        flex-direction: column;
+        gap: 18px;
+    }
+
+    .card {
+        padding: 30px;
+        gap: 16px;
+    }
+
+    .title {
+        font-size: 20px;
+    }
 }
 
-.title {
-    font-size: 30px
+@include tablet() {
+    .cardList {
+        flex-direction: row;
+    }
 }
 
-.textContainer {
-    padding-right: 300px;
+@include laptop() {
+    .cardList {
+        gap: 30px;
+    }
+
+    .card {
+        padding: 40px;
+        gap: 24px;
+    }
+
+    .title {
+        min-height: auto;
+        font-size: 24px;
+    }
+
+    .textContainer {
+        width: 85%;
+    }
+}
+
+@include desktop_extra_extra() {
+    .card {
+        padding: 50px;
+        gap: 28px;
+    }
+
+    .cardList {
+        gap: 40px;
+    }
+
+    .title {
+        font-size: 30px;
+    }
 }

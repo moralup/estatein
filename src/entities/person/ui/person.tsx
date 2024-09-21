@@ -2,6 +2,7 @@ import type { FC } from 'react';
 import type { PersonI } from '../model/types';
 
 import { Card } from 'shared/ui/card';
+import { AppImage } from 'shared/appImage';
 import { Button } from 'shared/ui/button';
 import TwitterIcon from 'shared/assets/icons/twitter-icon.svg';
 import TelegramIcon from 'shared/assets/icons/telegram-icon.svg';
@@ -19,15 +20,34 @@ export const Person: FC<PersonProps> = ({ className, person }) => {
 
     return (
         <Card className={clsx(cls.card, className)}>
-            <img src={photo} alt={name} className={cls.img} />
-            <Button className={cls.btnTwitter} theme="background">
-                <TwitterIcon />
-            </Button>
-            <h4 className={cls.title}>{name}</h4>
+            <div className={cls.imgWrapper}>
+                <AppImage
+                    src={photo}
+                    className={cls.img}
+                    errorFallback={(
+                        <div className={cls.img}>
+                            <h3>{`no photo of ${name}`}</h3>
+                        </div>
+                    )}
+                />
+                <Button
+                    className={cls.btnTwitter}
+                    theme="background"
+                >
+                    <TwitterIcon className={cls.twitterIcon} />
+                </Button>
+            </div>
+            <h3 className={cls.name}>{name}</h3>
             <span className={cls.role}>{role}</span>
-            <Button max theme="grayBackground" className={cls.btnTelegram}>
+            <Button
+                max
+                theme="grayBackground"
+                className={cls.btnTelegram}
+            >
                 <span>Say Hello👋</span>
-                <TelegramIcon width="44" height="44" className={cls.telegramIcon} />
+                <div className={cls.telegramIconWrapper}>
+                    <TelegramIcon className={cls.telegramIcon} />
+                </div>
             </Button>
         </Card>
     );

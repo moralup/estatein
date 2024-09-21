@@ -1,25 +1,41 @@
-.title {
-    font-size: 26px;
+.card {
+    display: flex;
+    flex-direction: column;
 }
 
 .step {
-    display: block;
-    font-size: 20px;
-    padding: 16px 20px;
+    font-size: 16px;
+    padding: 14px 16px;
     border-left: 1px solid var(--primary-color-60);
     color: var(--absolute-color-white);
 }
 
 .textContent {
-    width: 512px;
-    height: 267px;
-    padding: 50px;
-    gap: 20px;
-    border-radius: var(--card-border-radius);
-    border-top-left-radius: 0;
-    border: 1px solid transparent;
-    background:
-        linear-gradient(140deg, var(--primary-color-60) -55%, var(--gray-color-08) 14%) padding-box,
-        linear-gradient(140deg, var(--primary-color-60) 0%, var(--gray-color-15) 25%) border-box;
+    height: 100%;
+    padding: 30px;
+    gap: 14px;
+    @include angle_gradient(var(--primary-color-60));
 }
 
+@include laptop() {
+    .textContent {
+        padding: 40px;
+        gap: 16px;
+    }
+}
+
+@include desktop_extra_extra() {
+    .step {
+        font-size: 20px;
+        padding: 16px 20px;
+    }
+
+    .title {
+        font-size: 26px;
+    }
+
+    .textContent {
+        padding: 50px;
+        gap: 20px;
+    }
+}

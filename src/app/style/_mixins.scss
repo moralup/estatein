@@ -1,4 +1,23 @@
-@mixin titleFont($size, $weight: var(--font-weight-semi-bold)) {
-    font-size: $size;
-    font-weight: $weight;
+@mixin angle_gradient(
+    $gradient_color,
+    $background_color: var(--gray-color-08),
+    $border_color: var(--gray-color-15)
+) {
+    border-radius: var(--card-border-radius);
+    border-top-left-radius: 0;
+    border: 1px solid transparent;
+    background:
+        linear-gradient(140deg, $gradient_color -55%, $background_color 14%)
+            padding-box,
+        linear-gradient(140deg, $gradient_color 0%, $border_color 25%)
+            border-box;
+}
+
+@mixin heightByNumberOfLines(
+    $numberOfLines,
+    $fontSize: var(--new-font-size-m)
+) {
+    $lineHeight: calc($fontSize * 1.5);
+    $height: calc($lineHeight * $numberOfLines);
+    min-height: $height;
 }

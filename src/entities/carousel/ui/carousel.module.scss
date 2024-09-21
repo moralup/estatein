@@ -13,23 +13,25 @@
     }
 
     .navigation {
+        gap: 10px;
+
         &__fullWidth {
             justify-content: space-between;
         }
 
         &__right {
             border-top: 1px solid var(--gray-color-15);
-            gap: 10px;
             padding-top: 15px;
-
-            .btnArrow:first-child {
-                margin-left: auto;
-            }
+            justify-content: end;
         }
     }
 }
 
 @include tablet() {
+    .navigation__fullWidth {
+        justify-content: end;
+    }
+
     .counter {
         position: absolute;
         left: 0;

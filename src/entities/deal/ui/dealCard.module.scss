@@ -1,0 +1,68 @@
+@import './mixins';
+
+.cardWrapper {
+    height: 100%;
+}
+
+.card {
+    gap: 30px;
+    height: 100%;
+    outline: 6px solid var(--gray-color-10);
+}
+
+.header {
+    display: flex;
+    gap: 20px;
+}
+
+.companyWrapper {
+    gap: 6px;
+    // gap: 9px;
+}
+
+.infoContainer {
+    flex: 1 1 0px;
+
+    .info {
+        @include heightByNumberOfLines(2);
+    }
+
+    &:first-child {
+        flex: 1.3;
+    }
+
+    &:last-child {
+        padding-left: 15px;
+        border-left: 1px solid var(--gray-color-15);
+    }
+}
+
+.company,
+.info,
+.feedback {
+    color: var(--absolute-color-white);
+}
+
+@include mobile() {
+    @include vertical_view();
+}
+
+@include mobile_landscape() {
+    @include horizon_view();
+}
+
+@include tablet() {
+    @include vertical_view();
+}
+
+@include laptop() {
+    @include horizon_view();
+
+    .card {
+        outline: 8px solid var(--gray-color-10);
+    }
+}
+
+@include desktop_extra_extra() {
+    @include horizon_big_view();
+}

@@ -6,8 +6,6 @@ import type {
 } from './config/build/types';
 import { buildWebpackConfig } from './config/build/buildWebpackConfig';
 
-//! html path.resolve(__dirname, 'public', 'index.html')
-
 export default (env: BuildEnvI) => {
     const paths: BuildPathsI = {
         src: path.resolve(__dirname, 'src'),

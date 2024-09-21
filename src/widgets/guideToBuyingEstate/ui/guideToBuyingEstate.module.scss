@@ -1,9 +1,41 @@
-.steps{
-    flex-wrap: wrap;
-    row-gap: 50px;
-    column-gap: 30px;
+@include mobile() {
+    .stepList {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: 1fr;
+        row-gap: 29px;
+    }
+
+    .test {
+        // margin-top: -2px;
+    }
 }
 
-.test {
-    margin-top: -2px;
+@include tablet() {
+    .stepList {
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 19px;
+        row-gap: 39px;
+    }
+}
+
+@include laptop() {
+    .text {
+        width: 80%;
+    }
+
+    .stepList {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@include desktop_extra_extra() {
+    .text {
+        width: 85%;
+    }
+
+    .stepList {
+        column-gap: 30px;
+        row-gap: 50px;
+    }
 }

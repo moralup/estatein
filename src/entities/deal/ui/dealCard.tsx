@@ -1,45 +1,45 @@
-import { FC } from 'react';
-import { clsx } from 'shared/lib/clsx';
-import cls from './deal.module.scss';
-// import { BestDealI } from 'widgets/valuedClients/model/types';
+import type { FC } from 'react';
+import type { BestDealI } from '../model/types';
 import { Card } from 'shared/ui/card';
 import { HStack, VStack } from 'shared/ui/stack';
 import { Button } from 'shared/ui/button';
 import LightningIcon from 'shared/assets/icons/lightning-icon.svg';
 import DomainIcon from 'shared/assets/icons/domain-icon.svg';
+import { clsx } from 'shared/lib/clsx';
+import cls from './dealCard.module.scss';
 
 interface DealProps {
     className?: string;
-    // deal: BestDealI;
-    deal: any;
+    deal: BestDealI;
 }
 
-export const Deal: FC<DealProps> = ({ className, deal }) => {
+export const DealCard: FC<DealProps> = ({ className, deal }) => {
     const { category, company, domain, feedback, since, website } = deal;
-
+ 
     return (
+        <div className={clsx(cls.cardWrapper, className)}>
         <Card
-            theme="outline"
-            className={clsx(cls.card, className)}
+            className={clsx(cls.card)}
+            // className={clsx(cls.card, className)}
             align="left"
         >
             <div className={cls.header}>
-                <VStack className={cls.headerTextContent}>
+                <VStack className={cls.companyWrapper}>
                     <span className={cls.since}>{`Since ${since}`}</span>
                     <span className={cls.company}>{company}</span>
                 </VStack>
-                <Button
-                    className={cls.websiteLink}
-                    onClick={() => console.log(website)}
-                >
+                <Button onClick={() => console.log(website)}>
                     Visit Website
                 </Button>
             </div>
-            <HStack justify="between">
+            <HStack
+                justify="between"
+                align="left"
+            >
                 <VStack className={cls.infoContainer}>
                     <HStack>
                         <DomainIcon
-                            className={cls.SvgIcon}
+                            className={cls.infoLabelIcon}
                             viewBox="0 0 24 24"
                         />
                         <span className={cls.infoLabel}>Domain</span>
@@ -49,7 +49,7 @@ export const Deal: FC<DealProps> = ({ className, deal }) => {
                 <VStack className={cls.infoContainer}>
                     <HStack>
                         <LightningIcon
-                            className={cls.SvgIcon}
+                            className={cls.infoLabelIcon}
                             viewBox="0 0 24 24"
                         />
                         <span className={cls.infoLabel}>Category</span>
@@ -65,25 +65,6 @@ export const Deal: FC<DealProps> = ({ className, deal }) => {
                 <p className={cls.feedback}>{feedback}</p>
             </Card>
         </Card>
+        </div>
     );
 };
-
-export class Statistics {
-    /**
-     * Returns the average of two numbers.
-     *
-     * @remarks
-     * This method is part of the {@link core-library#Statistics | Statistics subsystem}.
-     *
-     * @param x - The first input number
-     * @param y - The second input number
-     * @returns The arithmetic mean of `x` and `y`
-     *
-     * @beta
-     */
-    public static getAverage(x: number, y: number): number {
-        return (x + y) / 2.0;
-    }
-}
-
-// Statistics.getAverage()

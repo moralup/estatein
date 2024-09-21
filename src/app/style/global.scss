@@ -32,8 +32,6 @@
         'address',
         'label',
         'span',
-        'div',
-        'li'
     );
     @include texts(16px, 'label');
     :root {
@@ -42,7 +40,7 @@
 }
 @include laptop() {
     @include titles(46px, 38px, 20px);
-    @include texts(16px, 'p', 'a', 'address', 'span', 'div', 'li');
+    @include texts(16px, 'p', 'a', 'address', 'span');
     :root {
         --new-font-size-m: 16px;
     }
@@ -57,9 +55,7 @@
         'input',
         'textarea',
         'span',
-        'div',
         'button',
-        'li'
     );
     @include texts(20px, 'label');
 }

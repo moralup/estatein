@@ -1,12 +1,3 @@
-@mixin heightByNumberOfLines(
-    $numberOfLines,
-    $fontSize: var(--new-font-size-m)
-) {
-    $lineHeight: calc($fontSize * 1.5);
-    $height: calc($lineHeight * $numberOfLines);
-    min-height: $height;
-}
-
 @include mobile() {
     .card {
         gap: 20px;

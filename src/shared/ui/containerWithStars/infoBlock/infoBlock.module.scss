@@ -18,13 +18,13 @@
 
 @include tablet() {
     .textContainer {
-        width: 70%;
+        // width: 70%; //! &&&&&&&&&&&&&&&&&&&
     }
 }
 
 @include laptop() {
     .textContainer {
-        width: 77%;
+        // width: 77%; //! &&&&&&&&&&&&&&&&&&&
     }
 
     .stars {
@@ -41,7 +41,7 @@
 
 @include desktop_extra_extra() {
     .textContainer {
-        width: 75%;
+        // width: 75%; //! &&&&&&&&&&&&&&&&&&&
     }
 
     .stars {

@@ -1,3 +1,33 @@
-.showTeam {
-    
+.teamList {
+    display: grid;
+    gap: 20px;
+}
+
+@include mobile_landscape() {
+    .teamList {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@include laptop() {
+    .textContainer {
+        width: 80%;
+    }
+}
+
+@include desktop() {
+    .teamList {
+        grid-auto-columns: minmax(0, 1fr);
+        grid-auto-flow: column;
+    }
+}
+
+@include desktop_extra_extra() {
+    .textContainer {
+        width: 85%;
+    }
+
+    .teamList {
+        gap: 30px;
+    }
 }

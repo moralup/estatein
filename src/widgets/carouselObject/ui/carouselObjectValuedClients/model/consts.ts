@@ -1,5 +1,6 @@
 /* eslint-disable max-len */
-import { BestDealI } from './types';
+
+import { BestDealI } from 'entities/deal/model/types';
 
 const bestDealsData: BestDealI[] = [
     {

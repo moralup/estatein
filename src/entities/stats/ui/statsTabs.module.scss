@@ -1,79 +1,94 @@
-.stats {
-    gap: 12px;
-    display: grid;
-    grid-template-rows: 1fr 1fr;
-    grid-template-columns: 1fr 1fr;
-}
+@include mobile() {
+    .stats {
+        gap: 12px;
+        display: grid;
+        grid-template-rows: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
 
-.title {
-    font-size: 24px;
-    font-weight: var(--font-weight-bold);
-}
+        .title {
+            font-size: 24px;
+            font-weight: var(--font-weight-bold);
+        }
 
-.statsCard {
-    padding: 16px 0;
-    gap: 2px;
-    align-items: center;
-    text-wrap: nowrap;
+        .statsCard {
+            padding: 16px 0;
+            gap: 2px;
+            align-items: center;
+            text-wrap: nowrap;
 
-    &:last-child {
-        grid-column: span 2;
-    }
-}
+            &:last-child {
+                grid-column: span 2;
+            }
+        }
 
-.stats__max {
-    .statsCard {
-        padding: 24px;
+        &__max {
+            gap: 16px;
+
+            .statsCard {
+                padding: 18px;
+            }
+        }
     }
 }
 
 @include tablet() {
     .stats {
-        gap: 12px;
         display: flex;
-    }
 
-    .title {
-        font-size: 30px;
-    }
+        .title {
+            font-size: 30px;
+        }
 
-    .statsCard {
-        align-items: start;
-        padding: 14px 20px;
+        .statsCard {
+            align-items: start;
+            padding: 14px 20px;
+        }
+
+        &__max {
+            .statsCard {
+                padding: 20px;
+            }
+        }
     }
 }
 
 @include laptop() {
-    .stats {
-        // gap: 12px;
+    .stats:not(.stats__max) {
+        gap: 12px;
         display: grid;
-    }
 
-    .statsCard {
-        align-items: center;
+        .statsCard {
+            align-items: center;
+        }
     }
 }
 
 @include desktop_extra() {
     .stats {
         display: flex;
-    }
 
-    .statsCard {
-        align-items: start;
+        .statsCard {
+            align-items: start;
+        }
     }
 }
 
 @include desktop_extra_extra() {
-    .title {
-        font-size: 40px;
-    }
-
-    .statsCard {
-        padding: 14px 24px;
-    }
-
     .stats {
         gap: 20px;
+
+        .title {
+            font-size: 40px;
+        }
+
+        .statsCard {
+            padding: 14px 24px;
+        }
+
+        &__max {
+            .statsCard {
+                padding: 24px;
+            }
+        }
     }
 }

@@ -1,5 +1,6 @@
-import { FC } from 'react';
+import type { FC } from 'react';
 import { VStack } from 'shared/ui/stack';
+import { clsx } from 'shared/lib/clsx';
 import cls from './stepGuide.module.scss';
 
 interface StepGuideProps {
@@ -13,7 +14,7 @@ export const StepGuide: FC<StepGuideProps> = props => {
     const { className, description, step, title } = props;
 
     return (
-        <div className={className}>
+        <div className={clsx(cls.card, className)}>
             <span className={cls.step}>{`Step ${step}`}</span>
             <VStack className={cls.textContent}>
                 <h3 className={cls.title}>{title}</h3>
