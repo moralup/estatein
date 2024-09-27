@@ -5,7 +5,7 @@ import { Button } from 'shared/ui/button';
 import { clsx } from 'shared/lib/clsx';
 import cls from './carouselObjectTemplate.module.scss';
 
-export interface PropsI<P> extends CarouselProps<P> {
+export interface CarouselTemplateProps<P> extends CarouselProps<P> {
     /** className for carousel wrapper. Needed for add negative indent
      * 
      * (default mobile - 10px)
@@ -33,10 +33,11 @@ const defaultResponsiveManager: ResponsiveManagerType = {
     1200: { items: 3 },
 };
 
-export const CarouselTemplate = <T,>(props: PropsI<T>) => {
+export const CarouselTemplate = <T,>(props: CarouselTemplateProps<T>) => {
     const {
         Card,
         cardsProps,
+        commonProps,
         title,
         description,
         type,
@@ -66,10 +67,12 @@ export const CarouselTemplate = <T,>(props: PropsI<T>) => {
             <Carousel
                 Card={Card}
                 cardsProps={cardsProps}
+                commonProps={commonProps}
                 responsiveManager={responsiveManager || defaultResponsiveManager}
                 clsIndentList={clsIndentList || cls.carouselList}
                 clsIndentCard={clsIndentCard || cls.card}
                 navigationView={navigationView}
+
             />
         </Container>
     );

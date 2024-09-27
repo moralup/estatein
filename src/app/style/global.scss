@@ -69,6 +69,11 @@
         --vertical-indent: 16px; // Oтступ для мобильного
         --negative-vertical-indent: -16px; // Oтступ для мобильного
     }
+
+    svg {
+        width: 20px;
+        height: 20px;
+    }
 }
 
 @include mobile_landscape() {
@@ -110,5 +115,10 @@
     :root {
         --vertical-indent: 162px; // Максимальный отступ для очень больших экранов
         --negative-vertical-indent: -162px; // Максимальный отступ для очень больших экранов
+    }
+
+    svg {
+        width: 24px;
+        height: 24px;
     }
 }

@@ -1,0 +1,10 @@
+@include mobile() {
+    .textarea {
+        width: 100%;
+        resize: none;
+
+        &::placeholder {
+            color: var(--gray-color-40);
+        }
+    }
+}

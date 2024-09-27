@@ -52,12 +52,6 @@
     line-height: 0;
 }
 
-.twitterIcon,
-.telegramIcon {
-    width: 20px;
-    height: 20px;
-}
-
 @include laptop() {
     .card {
         padding: 24px;
@@ -110,11 +104,5 @@
 
     .btnTelegram {
         padding: 14px 12px 14px 24px;
-    }
-
-    .twitterIcon,
-    .telegramIcon {
-        width: 24px;
-        height: 24px;
     }
 }

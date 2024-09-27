@@ -8,6 +8,7 @@ const estate: EstateI = {
     suburban neighborhood... Read More`,
     price: 550000,
     img: 'https://estateindubai.com/uploads/QXHmRFZbsa.webp',
+    ambiance: 'Coastal Escapes - Where Waves Beckon.',
     tags: [
         { value: 'Bedroom', quantity: 4 },
         { value: 'Bathroom', quantity: 3 },

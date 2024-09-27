@@ -10,6 +10,7 @@ interface InfoBlockProps extends TypedOmit<FlexProps, 'children'> {
     description?: string;
     children?: ReactNode;
     textContainerClassName?: string;
+    withoutStars?: boolean;
 }
 
 export const InfoBlock: FC<InfoBlockProps> = props => {
@@ -19,13 +20,17 @@ export const InfoBlock: FC<InfoBlockProps> = props => {
         children,
         description,
         title,
+        withoutStars,
         ...otherProps
     } = props;
 
     return (
-        <Container className={className} {...otherProps}>
+        <Container
+            className={className}
+            {...otherProps}
+        >
             <div className={clsx(cls.textContainer, textContainerClassName)}>
-                <Stars className={cls.stars} />
+                {!withoutStars && <Stars className={cls.stars} />}
                 {title && <h2 className={cls.title}>{title}</h2>}
                 {description && <p>{description}</p>}
             </div>

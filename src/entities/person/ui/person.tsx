@@ -34,7 +34,7 @@ export const Person: FC<PersonProps> = ({ className, person }) => {
                     className={cls.btnTwitter}
                     theme="background"
                 >
-                    <TwitterIcon className={cls.twitterIcon} />
+                    <TwitterIcon />
                 </Button>
             </div>
             <h3 className={cls.name}>{name}</h3>
@@ -46,7 +46,7 @@ export const Person: FC<PersonProps> = ({ className, person }) => {
             >
                 <span>Say Hello👋</span>
                 <div className={cls.telegramIconWrapper}>
-                    <TelegramIcon className={cls.telegramIcon} />
+                    <TelegramIcon />
                 </div>
             </Button>
         </Card>

@@ -1,3 +1,26 @@
-.propertiesPage {
-    
+@include mobile() {
+    .indent {
+        @include main_margin();
+    }
+
+    .propertiesPage {
+        display: flex;
+        flex-direction: column;
+        gap: 80px;
+        margin-bottom: 80px;
+    }
+}
+
+@include laptop() {
+    .propertiesPage {
+        margin-bottom: 120px;
+        gap: 120px;
+    }
+}
+
+@include desktop_extra_extra() {
+    .propertiesPage {
+        margin-bottom: 150px;
+        gap: 150px;
+    }
 }

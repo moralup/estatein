@@ -1,0 +1,43 @@
+@include mobile() {
+    .container {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .label {
+        font-size: 16px;
+        color: var(--absolute-color-white);
+    }
+
+    .form {
+        line-height: 20px;
+        color: var(--gray-color-40);
+        border-radius: 6px;
+        padding: 16px 20px;
+        outline: 1px solid var(--gray-color-15);
+        background: var(--gray-color-10);
+    }
+}
+
+@include laptop() {
+    .container {
+        gap: 14px;
+    }
+}
+
+@include desktop_extra_extra() {
+    .container {
+        gap: 16px;
+    }
+
+    .label {
+        font-size: 20px;
+    }
+
+    .form {
+        font-size: 18px;
+        border-radius: 8px;
+        padding: 24px 20px;
+    }
+}

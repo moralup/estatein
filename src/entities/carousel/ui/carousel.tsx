@@ -27,6 +27,8 @@ export interface CarouselProps<P> {
     Card: FC<P>;
     /** An array of props that be spread to the card */
     cardsProps: P[];
+    /** A common props that is the same for every card */
+    commonProps?: Partial<P>;
     /** An Optional string determining how the carousel footer be displayed for mobile screen. */
     navigationView?: NavigationViewType;
     /** An optional object configuring the number of elements displayed on the screen */
@@ -42,12 +44,13 @@ export const Carousel = <P, >(props: CarouselProps<P>) => {
         clsIndentCard,
         Card,
         cardsProps,
+        commonProps,
         responsiveManager,
         navigationView = 'right',
     } = props;
 
     const [activeIndex, setActiveIndex] = useState(0);
-    const items = useCreateElements(cardsProps, Card, clsIndentCard);
+    const items = useCreateElements(cardsProps, Card, clsIndentCard, commonProps);
     const numberOfElements = useNumberOfElements(responsiveManager);
 
     const isSlidePrev = activeIndex > 0;

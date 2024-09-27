@@ -1,0 +1,101 @@
+@include mobile() {
+    .selects {
+        display: grid;
+        gap: 20px;
+        background: var(--gray-color-10);
+        padding: 20px;
+        border-radius: var(--card-border-radius);
+    }
+
+    .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 9px 10px 9px 18px;
+        border: 1px solid var(--gray-color-20);
+        border-radius: var(--card-border-radius);
+        outline: 4px solid var(--gray-color-10);
+        margin-bottom: 20px;
+        background: var(--gray-color-08);
+        &__text {
+            font-size: 16px;
+        }
+    }
+
+    .btnSearch {
+        line-height: 0;
+
+        &__text {
+            display: none;
+            color: var(--absolute-color-white);
+            font-size: 14px;
+        }
+    }
+}
+
+@include mobile_landscape() {
+    .btnSearch {
+        display: flex;
+        gap: 6px;
+
+        &__text {
+            display: inline;
+        }
+    }
+}
+
+@include tablet() {
+    .selects {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@include laptop() {
+    .header {
+        margin: 0 90px;
+        margin: 0 7%;
+        outline: 10px solid var(--gray-color-10);
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+        padding: 16px 16px 16px 20px;
+
+        &__text {
+            font-size: 20px;
+        }
+    }
+
+    .selects {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+
+@include desktop_extra() {
+    .findPropertyForm {
+        // margin-top: -100px;
+    }
+
+    .selects {
+        grid-auto-columns: minmax(0, 1fr);
+        grid-auto-flow: column;
+        padding: 10px;
+    }
+}
+
+@include desktop_extra_extra() {
+    .header {
+        padding: 20px 20px 20px 24px;
+        margin: 0 148px 10px;
+
+        &__text {
+            font-size: 24px;
+        }
+    }
+
+    .btnSearch {
+        line-height: 0;
+
+        &__text {
+            font-size: 18px;
+        }
+    }
+}

@@ -21,3 +21,11 @@
     $height: calc($lineHeight * $numberOfLines);
     min-height: $height;
 }
+
+@mixin main_margin($marginTop: 0px, $marginBottom: $marginTop) {
+    margin: $marginTop var(--vertical-indent) $marginBottom;
+}
+
+@mixin main_padding($paddingTop: 0px, $paddingBottom: $paddingTop) {
+    padding: $paddingTop var(--vertical-indent) $paddingBottom;
+}

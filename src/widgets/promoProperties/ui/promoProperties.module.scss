@@ -1,0 +1,69 @@
+@include mobile() {
+    .infoBlock {
+        @include main_padding(50px);
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        margin-bottom: 40px;
+
+        outline: 1px solid var(--gray-color-15);
+        background: linear-gradient(
+                116deg,
+                var(--gray-color-15) -20%,
+                var(--gray-color-08) 40%
+            )
+            padding-box;
+    }
+
+    .filters {
+        @include main_padding();
+    }
+}
+
+@include laptop() {
+    .promoProperties {
+        position: relative;
+    }
+
+    .infoBlock {
+        @include main_padding(100px, 126px);
+        margin-bottom: 0;
+
+        &__text {
+            width: 89%;
+        }
+    }
+
+    .filters {
+        position: absolute;
+        z-index: 2;
+        width: 100%;
+        left: 0;
+        bottom: 0;
+    }
+
+    .promoProperties {
+        padding-bottom: 195px;
+    }
+}
+
+@include desktop_extra() {
+    .promoProperties {
+        padding-bottom: 103px;
+    }
+}
+
+@include desktop_extra_extra() {
+    .infoBlock {
+        @include main_padding(150px, 160px);
+        gap: 14px;
+
+        &__text {
+            width: 85%;
+        }
+    }
+
+    .promoProperties {
+        padding-bottom: 153px;
+    }
+}

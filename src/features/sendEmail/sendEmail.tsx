@@ -49,7 +49,7 @@ export const SendEmail: FC<SendEmailProps> = props => {
                     isActive && cls.placeholder__active,
                 )}
             >
-                <MessageIcon className={cls.messageIcon} />
+                <MessageIcon />
                 <span className={cls.placeholderText}>Enter Your Email</span>
             </HStack>
             <Button

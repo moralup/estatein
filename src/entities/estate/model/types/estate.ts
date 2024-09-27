@@ -1,4 +1,4 @@
-export type EstateTagValue = 'Bedroom' | 'Bathroom' | 'Villa';
+export type EstateTagValue = 'Bedroom' | 'Bathroom' | 'Villa' | string;
 
 export interface EstateTagI {
     quantity?: number;
@@ -11,4 +11,5 @@ export interface EstateI {
     description: string;
     tags: EstateTagI[];
     price: number;
+    ambiance: string;
 }

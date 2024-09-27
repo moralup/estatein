@@ -1,0 +1,23 @@
+@include mobile() {
+    .input {
+        line-height: inherit;
+        font-size: inherit;
+        color: inherit;
+        background: inherit;
+
+        &Wrapper {
+            gap: 6px;
+            display: flex;
+        }
+    }
+}
+
+@include desktop_extra_extra() {
+    .inputWrapper {
+        gap: 12px;
+    }
+
+    .icon {
+        margin: -2px 0;
+    }
+}

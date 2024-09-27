@@ -34,6 +34,7 @@ export const useCreateElements = <P, >(
     elementsProps: P[],
     Component: FC<P>,
     className?: string,
+    commonProps?: Partial<P>,
 ) => useMemo(() => {
         return elementsProps.map((props, i) => (
             <Component
@@ -41,6 +42,7 @@ export const useCreateElements = <P, >(
                 className={className}
                 data-value={i + 1}
                 {...props}
+                {...(commonProps || {})}
             />
         ));
-    }, [Component, className, elementsProps]);
+    }, [Component, className, elementsProps, commonProps]);

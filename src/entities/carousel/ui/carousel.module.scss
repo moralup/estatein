@@ -29,7 +29,9 @@
 
 @include tablet() {
     .navigation__fullWidth {
+        padding-top: 15px;
         justify-content: end;
+        border-top: 1px solid var(--gray-color-15);
     }
 
     .counter {

@@ -15,7 +15,7 @@ export const HomePage: FC = () => {
             <Promo />
             <ServicesRange />
             <div className={clsx(cls.pageContent)}>
-                <CarouselObjectProperties />
+                <CarouselObjectProperties view="homePage" />
                 <CarouselObjectTestimonials />
                 <CarouselObjectFAQ />
             </div>

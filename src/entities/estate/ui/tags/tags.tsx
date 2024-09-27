@@ -10,7 +10,7 @@ interface TagsProps {
     tags: EstateTagI[];
 }
 
-const renderTag = ({ value, quantity }: EstateTagI) => {
+export const Tag = ({ value, quantity }: EstateTagI) => {
     const loyalValue = quantity ? `${quantity}-${value}` : value;
     const Icon = tagIconMap[value];
 
@@ -26,10 +26,10 @@ const renderTag = ({ value, quantity }: EstateTagI) => {
     );
 };
 
-export const Tags: FC<TagsProps> = ({ className, tags }) => {
+export const TagList: FC<TagsProps> = ({ className, tags }) => {
     return (
         <HStack className={clsx(cls.tagList, className)}>
-            {tags.map(renderTag)}
+            {tags.map(Tag)}
         </HStack>
     );
 };

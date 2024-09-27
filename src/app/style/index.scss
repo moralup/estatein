@@ -7,3 +7,16 @@
 body {
     background-color: var(--gray-color-08);
 }
+
+::-webkit-scrollbar {
+    width: 9px;
+    height: 4px;
+    // background-color: var(--gray-color-20);
+    // background-color: var(--primary-color-90);
+    
+}
+::-webkit-scrollbar-thumb {
+    // border-radius: 1px;
+    border-radius: 3px;
+    background-color: var(--primary-color-60);
+}
