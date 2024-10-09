@@ -8,7 +8,6 @@ const meta = {
     parameters: {
         layout: 'centered',
     },
-
     args: {
         person: personMaxMitchell,
     },

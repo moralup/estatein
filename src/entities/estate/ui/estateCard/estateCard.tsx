@@ -2,7 +2,7 @@ import type { FC } from 'react';
 import type { EstateI } from '../../model/types/estate';
 import { priceFormatter } from 'shared/lib/priceFormatter';
 
-import { Card } from 'shared/ui/card';
+import { BaseCardProps, Card } from 'shared/ui/containers';
 import { Tag, TagList } from '../tags/tags';
 import { HStack, VStack } from 'shared/ui/stack';
 import { Button } from 'shared/ui/button';
@@ -10,27 +10,33 @@ import { Button } from 'shared/ui/button';
 import { clsx } from 'shared/lib/clsx';
 import cls from './estateCard.module.scss';
 
-type ViewType = 'homePage' | 'propertiesPage';
-
-export interface EstateCardProps {
-    className?: string;
-    estate: EstateI;
-    view?: ViewType;
+export interface EstateCardView {
+    isAmbianceTag?: boolean;
+    isSpecificationsTags?: boolean;
 }
+
+export type EstateCardProps = EstateCardView & BaseCardProps<EstateI>;
 // prettier-ignore
-export const EstateCard: FC<EstateCardProps> = ({ className, estate, view }) => {
-    const { description, img, title, price, tags, ambiance } = estate;
+export const EstateCard: FC<EstateCardProps> = props => {
+    const {
+        isSpecificationsTags,
+        isAmbianceTag,
+        data,
+        className,
+        size,
+    } = props;
+    const { description, img, title, price, tags, ambiance } = data;
 
     return (
-        <Card className={clsx(cls.card, className)} padding="m">
+        <Card className={clsx(cls.card, size && cls[`size_${size}`], className)}>
             <img className={cls.estateImage} src={img} alt={title} />
             <VStack className={cls.estateDetails}>
-                {view === 'propertiesPage' && <Tag value={ambiance} />}
+                {isAmbianceTag && <Tag value={ambiance} />}
                 <VStack className={cls.estateSummary}>
                     <h3>{title}</h3>
                     <p>{description}</p>
                 </VStack>
-                {view === 'homePage' && <TagList tags={tags} />}
+                {isSpecificationsTags && <TagList tags={tags} />}
                 <HStack className={cls.footer}>
                     <VStack>
                         <span className={cls.priceLabel}>Price</span>

@@ -2,7 +2,7 @@ import type { FC } from 'react';
 import type { BreakpointType } from 'shared/types/breakpoints';
 import { stats } from 'shared/consts/server';
 
-import { InfoBlock } from 'shared/ui/containerWithStars';
+import { InfoBlock } from 'shared/ui/containers';
 import { VStack } from 'shared/ui/stack';
 import { StatsTabs } from 'entities/stats';
 import houseOnPalm from 'shared/assets/images/house-on-palm.png';

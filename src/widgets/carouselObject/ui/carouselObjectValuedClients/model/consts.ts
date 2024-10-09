@@ -1,6 +1,5 @@
 /* eslint-disable max-len */
-
-import { BestDealI } from 'entities/deal/model/types';
+import type { BestDealI } from 'entities/deal/model/types';
 
 const bestDealsData: BestDealI[] = [
     {
@@ -23,11 +22,9 @@ const bestDealsData: BestDealI[] = [
     },
 ];
 
-export const valuedClients = [
-    { deal: bestDealsData[0] },
-    { deal: bestDealsData[1] },
-    { deal: bestDealsData[0] },
-    { deal: bestDealsData[1] },
-    { deal: bestDealsData[0] },
-    { deal: bestDealsData[1] },
+// prettier-ignore
+export const valuedClients: BestDealI[] = [
+    ...bestDealsData,
+    ...bestDealsData,
+    ...bestDealsData,
 ];

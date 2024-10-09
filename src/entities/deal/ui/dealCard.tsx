@@ -1,6 +1,6 @@
 import type { FC } from 'react';
 import type { BestDealI } from '../model/types';
-import { Card } from 'shared/ui/card';
+import { BaseCardProps, Card } from 'shared/ui/containers';
 import { HStack, VStack } from 'shared/ui/stack';
 import { Button } from 'shared/ui/button';
 import LightningIcon from 'shared/assets/icons/lightning-icon.svg';
@@ -8,19 +8,24 @@ import DomainIcon from 'shared/assets/icons/domain-icon.svg';
 import { clsx } from 'shared/lib/clsx';
 import cls from './dealCard.module.scss';
 
-interface DealProps {
-    className?: string;
-    deal: BestDealI;
-}
+export type DealProps = BaseCardProps<BestDealI>;
 
-export const DealCard: FC<DealProps> = ({ className, deal }) => {
-    const { category, company, domain, feedback, since, website } = deal;
+export const DealCard: FC<DealProps> = props => {
+    const { className, data, view, size } = props;
+    const { category, company, domain, feedback, since, website } = data;
+
+    const cardWrapperClasses = clsx(
+        cls.cardWrapper,
+        cls[`view_${view}`],
+        cls[`size_${size}`],
+        className,
+    );
 
     return (
-        <div className={clsx(cls.cardWrapper, className)}>
+        <div className={cardWrapperClasses}>
             <Card
                 className={clsx(cls.card)}
-                // className={clsx(cls.card, className)}
+                theme="outline"
                 align="left"
             >
                 <div className={cls.header}>

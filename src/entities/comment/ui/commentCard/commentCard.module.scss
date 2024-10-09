@@ -1,80 +1,87 @@
-@mixin card_view_row() {
-    .user {
-        position: absolute;
-    }
-
-    .stars {
-        margin-left: auto;
-        margin-bottom: 10px;
-    }
+.commentCard {
+    height: 100%;
 }
 
-@mixin card_view_column() {
-    .user {
-        position: static;
+.feedback {
+    color: var(--absolute-color-white);
+
+    &Title {
+        color: var(--absolute-color-white);
+        letter-spacing: 0.1px;
     }
 
-    .stars {
-        margin-left: 0;
-        margin-bottom: 0;
-    }
-}
-
-@include mobile() {
-    .commentCard {
-        gap: 26px;
-        height: 100%;
-    }
-
-    .feedbackContainer {
-        gap: 4px;
+    &Container {
         margin-bottom: auto;
     }
+}
 
-    .feedback {
-        color: var(--absolute-color-white);
+.size {
+    &_s {
+        &.commentCard {
+            gap: 26px;
+            padding: 30px;
+        }
 
-        &Title {
-            color: var(--absolute-color-white);
+        .feedbackContainer {
+            gap: 4px;
+        }
+
+        .feedbackTitle {
             font-size: 18px;
-            letter-spacing: 0.1px;
+        }
+    }
+
+    &_m {
+        &.commentCard {
+            gap: 30px;
+            padding: 40px 39px 40px 40px;
+        }
+
+        .feedbackContainer {
+            gap: 10px;
+        }
+
+        .feedbackTitle {
+            font-size: 20px;
+        }
+    }
+
+    &_l {
+        &.commentCard {
+            gap: 40px;
+            padding: 50px;
+        }
+
+        .feedbackContainer {
+            gap: 14px;
+        }
+
+        .feedbackTitle {
+            font-size: 24px;
         }
     }
 }
 
-@include mobile_landscape() {
-    @include card_view_row();
-}
+.view {
+    &_horizon {
+        .user {
+            position: absolute;
+        }
 
-@include tablet() {
-    @include card_view_column();
-}
-
-@include laptop() {
-    .commentCard {
-        gap: 30px;
+        .stars {
+            margin-left: auto;
+            margin-bottom: 10px;
+        }
     }
 
-    .feedbackContainer {
-        gap: 10px;
-    }
+    &_vertical {
+        .user {
+            position: static;
+        }
 
-    .feedbackTitle {
-        color: var(--absolute-color-white);
-        font-size: 20px;
-    }
-}
-
-@include desktop_extra_extra() {
-    .commentCard {
-        gap: 40px;
-    }
-
-    .feedbackContainer {
-        gap: 14px;
-    }
-
-    .feedbackTitle {
-        font-size: 24px;
+        .stars {
+            margin-left: 0;
+            margin-bottom: 0;
+        }
     }
 }

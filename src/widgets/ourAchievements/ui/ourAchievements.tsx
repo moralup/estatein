@@ -1,7 +1,6 @@
 /* eslint-disable max-len */
 import { FC } from 'react';
-import { InfoBlock } from 'shared/ui/containerWithStars';
-import { Card } from 'shared/ui/card';
+import { Card, InfoBlock } from 'shared/ui/containers';
 import cls from './ourAchievements.module.scss';
 
 interface OurAchievementsProps {
@@ -27,11 +26,12 @@ const arr: { title: string; description: string }[] = [
 export const OurAchievements: FC<OurAchievementsProps> = () => {
     return (
         <InfoBlock
+            // textWidth={[80, 85]}
+            textWidth="80%"
             description={`Our story is one of continuous growth and evolution.
             We started as a small team with big dreams, determined to create
             a real estate platform that transcended the ordinary.`}
             title="Our Achievements"
-            textContainerClassName={cls.textContainer}
         >
             <div className={cls.cardList}>
                 {arr.map(({ description, title }) => (

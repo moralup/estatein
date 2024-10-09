@@ -5,10 +5,6 @@
         grid-template-columns: 1fr;
         row-gap: 29px;
     }
-
-    .test {
-        // margin-top: -2px;
-    }
 }
 
 @include tablet() {
@@ -20,20 +16,12 @@
 }
 
 @include laptop() {
-    .text {
-        width: 80%;
-    }
-
     .stepList {
         grid-template-columns: repeat(3, 1fr);
     }
 }
 
 @include desktop_extra_extra() {
-    .text {
-        width: 85%;
-    }
-
     .stepList {
         column-gap: 30px;
         row-gap: 50px;

@@ -12,15 +12,14 @@
 
 .textContent {
     height: 100%;
-    padding: 30px;
     gap: 14px;
-    @include angle_gradient(var(--primary-color-60));
+    padding: 30px;
 }
 
 @include laptop() {
     .textContent {
-        padding: 40px;
         gap: 16px;
+        padding: 40px;
     }
 }
 
@@ -35,7 +34,7 @@
     }
 
     .textContent {
-        padding: 50px;
         gap: 20px;
+        padding: 50px;
     }
 }

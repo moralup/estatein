@@ -10,8 +10,7 @@
     "lint:ts": "eslint \"**/*.{ts,tsx}\"",
     "lint:ts:fix": "eslint \"**/*.{ts,tsx}\" --fix",
     "storybook": "storybook dev -p 6006 -c config/storybook",
-    "storybook:build": "storybook build -c config/storybook",
-    "build-storybook": "storybook build"
+    "storybook:build": "storybook build -c config/storybook"
   },
   "keywords": [],
   "author": "",
@@ -22,6 +21,7 @@
     "@storybook/addon-interactions": "^8.2.6",
     "@storybook/addon-links": "^8.2.6",
     "@storybook/addon-onboarding": "^8.2.6",
+    "@storybook/addon-styling-webpack": "^1.0.0",
     "@storybook/addon-webpack5-compiler-swc": "^1.0.5",
     "@storybook/blocks": "^8.2.6",
     "@storybook/react": "^8.2.6",
@@ -46,6 +46,7 @@
     "file-loader": "^6.2.0",
     "globals": "^15.8.0",
     "html-webpack-plugin": "^5.6.0",
+    "loki": "^0.35.1",
     "mini-css-extract-plugin": "^2.9.0",
     "prettier": "^3.3.3",
     "sass": "^1.77.8",
@@ -71,5 +72,20 @@
     "extends": [
       "plugin:storybook/recommended"
     ]
+  },
+  "loki": {
+    "configurations": {
+      "chrome.laptop": {
+        "target": "chrome.app",
+        "width": 1366,
+        "height": 768,
+        "deviceScaleFactor": 1,
+        "mobile": false
+      },
+      "chrome.iphone7": {
+        "target": "chrome.app",
+        "preset": "iPhone 7"
+      }
+    }
   }
 }

@@ -1,8 +1,7 @@
 import type { FC } from 'react';
 import type { StatI } from 'shared/types/server';
 
-import { Card } from 'shared/ui/card';
-import { HStack } from 'shared/ui/stack';
+import { Card } from 'shared/ui/containers';
 
 import { clsx } from 'shared/lib/clsx';
 import cls from './statsTabs.module.scss';

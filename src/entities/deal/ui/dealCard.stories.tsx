@@ -9,7 +9,7 @@ const meta = {
         layout: 'centered',
     },
     args: {
-        deal: {
+        data: {
             since: '2019',
             company: 'ABC Corporation',
             website: 'https://web.site',
@@ -24,4 +24,35 @@ export default meta;
 
 type Story = StoryObj<typeof DealCard>;
 
-export const Primary: Story = {};
+export const Vertical: Story = {
+    args: {
+        view: 'vertical',
+    },
+    decorators: Component => (
+        <div style={{ width: 400 }}>
+            <Component />
+        </div>
+    ),
+};
+
+export const Horizon: Story = {
+    args: {
+        view: 'horizon',
+    },
+    decorators: Component => (
+        <div style={{ width: 700 }}>
+            <Component />
+        </div>
+    ),
+};
+
+export const HorizonBig: Story = {
+    args: {
+        view: 'horizon',
+    },
+    decorators: Component => (
+        <div style={{ width: 700 }}>
+            <Component />
+        </div>
+    ),
+};

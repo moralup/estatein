@@ -1,0 +1,30 @@
+.card {
+    flex: 1 1 0px;
+    border-radius: var(--card-border-radius);
+    border: 1px solid var(--gray-color-15);
+}
+
+.background {
+    &_gray-08 {
+        background: var(--gray-color-08);
+    }
+    &_gray-10 {
+        background: var(--gray-color-10);
+    }
+}
+
+.theme {
+    &_outline {
+        @include mobile() {
+            outline: 6px solid var(--gray-color-10);
+        }
+
+        @include laptop() {
+            outline: 8px solid var(--gray-color-10);
+        }
+    }
+
+    &_angleGradient {
+        @include angle_gradient(var(--primary-color-60));
+    }
+}

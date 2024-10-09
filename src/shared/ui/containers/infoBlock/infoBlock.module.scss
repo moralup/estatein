@@ -1,4 +1,12 @@
 @include mobile() {
+    .container {
+        gap: 40px;
+    }
+
+    .title {
+        margin-bottom: 6px;
+    }
+
     .textContainer {
         position: relative;
     }
@@ -10,21 +18,15 @@
         width: 45px;
         height: 20px;
     }
-
-    .title {
-        margin-bottom: 6px;
-    }
-}
-
-@include tablet() {
-    .textContainer {
-        // width: 70%; //! &&&&&&&&&&&&&&&&&&&
-    }
 }
 
 @include laptop() {
-    .textContainer {
-        // width: 77%; //! &&&&&&&&&&&&&&&&&&&
+    .container {
+        gap: 60px;
+    }
+
+    .title {
+        margin-bottom: 10px;
     }
 
     .stars {
@@ -33,15 +35,15 @@
         top: -30px;
         left: -10px;
     }
-
-    .title {
-        margin-bottom: 10px;
-    }
 }
 
 @include desktop_extra_extra() {
-    .textContainer {
-        // width: 75%; //! &&&&&&&&&&&&&&&&&&&
+    .container {
+        gap: 80px;
+    }
+
+    .title {
+        margin-bottom: 15px;
     }
 
     .stars {
@@ -49,9 +51,5 @@
         height: 30px;
         top: -40px;
         left: -20px;
-    }
-
-    .title {
-        margin-bottom: 15px;
     }
 }

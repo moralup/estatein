@@ -1,6 +1,6 @@
-import type { FAQProps } from 'entities/FAQ';
+import { QuestionAnswerI } from 'entities/FAQ';
 
-export const questionsAnswersDetailed: FAQProps[] = [
+export const questionsAnswersDetailed: QuestionAnswerI[] = [
     {
         question: 'How do I search for properties on Estatein?',
         answer: `Learn how to use our user-friendly search tools to find properties that match your criteria.
@@ -25,7 +25,7 @@ export const questionsAnswersDetailed: FAQProps[] = [
     },
 ];
 
-export const questionsAnswers: FAQProps[] = [
+export const questionsAnswers: QuestionAnswerI[] = [
     {
         question: 'How do I search for properties on Estatein?',
         answer: 'Learn how to use our user-friendly search tools to find properties that match your criteria.',

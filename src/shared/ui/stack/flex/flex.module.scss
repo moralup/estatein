@@ -25,12 +25,16 @@
         align-items: center;
     }
 
+    &_normal {
+        align-items: normal;
+    }
+
     &_left {
-        align-items: left;
+        align-items: start;
     }
 
     &_right {
-        align-items: right;
+        align-items: end;
     }
 }
 

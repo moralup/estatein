@@ -1,13 +1,13 @@
 import type { FC } from 'react';
 import { companyValues } from '../model/consts';
-import { InfoBlock } from 'shared/ui/containerWithStars';
+import { InfoBlock } from 'shared/ui/containers';
 import { HStack, VStack } from 'shared/ui/stack';
 import cls from './ourValues.module.scss';
 
 export const OurValues: FC = () => (
     <InfoBlock
+        textWidth={80}
         className={cls.section}
-        textContainerClassName={cls.textContainer}
         title="Our Values"
         description={`Our story is one of continuous growth and evolution.
                     We started as a small team with big dreams, determined to 

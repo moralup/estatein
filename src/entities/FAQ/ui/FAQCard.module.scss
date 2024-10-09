@@ -1,14 +1,11 @@
 @include mobile() {
     .card {
-        gap: 20px;
-        align-items: normal;
         height: 100%;
+        align-items: normal;
     }
 
     .question {
         color: var(--absolute-color-white);
-        font-size: 18px;
-        letter-spacing: 0.05px;
         margin-bottom: auto;
     }
 
@@ -21,31 +18,37 @@
     }
 }
 
-@include mobile_landscape() {
-    .card {
-        align-items: start;
-    }
-}
+.size {
+    &_s {
+        &.card {
+            gap: 20px;
+            padding: 30px;
+        }
 
-@include laptop() {
-    .card {
-        padding-right: 39px;
-        gap: 24px;
+        .question {
+            font-size: 18px;
+            letter-spacing: 0.05px;
+        }
     }
+    &_m {
+        &.card {
+            gap: 24px;
+            padding: 40px;
+        }
 
-    .question {
-        font-size: 20px;
-        letter-spacing: 0.1px;
+        .question {
+            font-size: 20px;
+            letter-spacing: 0.1px;
+        }
     }
-}
+    &_l {
+        &.card {
+            gap: 30px;
+            padding: 50px;
+        }
 
-@include desktop_extra_extra() {
-    .card {
-        padding: 50px;
-        gap: 30px;
-    }
-
-    .question {
-        font-size: 24px;
+        .question {
+            font-size: 24px;
+        }
     }
 }

@@ -1,6 +1,6 @@
 import type { FC } from 'react';
 import { PropertyInquiryForm } from 'features/propertyInquiryForm';
-import { InfoBlock } from 'shared/ui/containerWithStars';
+import { InfoBlock } from 'shared/ui/containers';
 
 interface Props {
     className?: string;

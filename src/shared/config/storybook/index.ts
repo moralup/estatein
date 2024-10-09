@@ -1,2 +1,2 @@
-export { outlineDecorator } from './outlineDecorator/outlineDecorator';
-export { styleDecorator } from './styleDecorator/styleDecorator';
+export { styleDecorator } from './styleDecorator';
+export { containerDecorator } from './containerDecorator/containerDecorator';

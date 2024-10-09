@@ -1,13 +1,12 @@
 import type { FC } from 'react';
 import { teamData } from '../model/const';
-import { InfoBlock } from 'shared/ui/containerWithStars';
+import { InfoBlock } from 'shared/ui/containers';
 import { Person } from 'entities/person';
 import cls from './showTeam.module.scss';
 
 export const ShowTeam: FC = () => {
     return (
         <InfoBlock
-            textContainerClassName={cls.textContainer}
             title="Meet the Estatein Team"
             description={`At Estatein, our success is driven by the dedication
                 and expertise of our team. Get to know the people behind our

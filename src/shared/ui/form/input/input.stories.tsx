@@ -3,7 +3,7 @@ import { Input } from './input';
 import PhoneIcon from 'shared/assets/storybook/images/phone-icon.svg';
 
 const meta = {
-    title: 'shared/Input',
+    title: 'shared/form/Input',
     component: Input,
     parameters: {
         layout: 'centered',
@@ -15,29 +15,46 @@ export default meta;
 
 type Story = StoryObj<typeof Input>;
 
-export const Primary: Story = {
-    args: {
-        label: 'Label',
-        placeholder: 'placeholder',
-    },
-};
+export const Primary: Story = {};
 
-export const WithoutLabel: Story = {
-    args: {
-        placeholder: 'placeholder',
-    },
-};
-
-export const WithoutPlaceholder: Story = {
+export const Label: Story = {
     args: {
         label: 'Label',
     },
 };
 
-export const WithIcon: Story = {
+export const Placeholder: Story = {
     args: {
-        label: 'Phone',
+        placeholder: 'placeholder',
+    },
+};
+
+export const Icon: Story = {
+    args: {
         Icon: PhoneIcon,
-        placeholder: 'Enter Your Number',
+    },
+};
+
+export const LabelAndPlaceholder: Story = {
+    args: {
+        label: 'Label',
+        placeholder: 'placeholder',
+    },
+};
+
+export const FullComplect: Story = {
+    args: {
+        Icon: PhoneIcon,
+        label: 'Label',
+        placeholder: 'placeholder',
+    },
+};
+
+export const WithValue: Story = {
+    args: {
+        Icon: PhoneIcon,
+        label: 'Label',
+        placeholder: 'placeholder',
+        value: 'Hello World!',
     },
 };

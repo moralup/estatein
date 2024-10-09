@@ -5,9 +5,8 @@ import cls from './flex.module.scss';
 export interface FlexProps {
     children: ReactNode;
     justify?: 'center' | 'left' | 'right' | 'between';
-    align?: 'center' | 'left' | 'right';
+    align?: 'center' | 'left' | 'right' | 'normal';
     direction?: 'column' | 'row';
-    gap?: number | string;
     className?: string;
 }
 
@@ -17,13 +16,11 @@ export const Flex: FC<FlexProps> = props => {
         align = 'center',
         justify = 'left',
         direction = 'column',
-        gap,
         children,
     } = props;
 
     return (
         <div
-            style={{ gap }}
             className={clsx(
                 cls.flex,
                 cls[`align_${align}`],

@@ -1,1 +1,2 @@
-export { FAQCard, type FAQProps } from './ui/FAQCard';
+export type { QuestionAnswerI } from './model/types';
+export { FAQCard } from './ui/FAQCard';

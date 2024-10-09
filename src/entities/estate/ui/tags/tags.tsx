@@ -17,7 +17,6 @@ export const Tag = ({ value, quantity }: EstateTagI) => {
     return (
         <HStack
             key={value}
-            gap={4}
             className={cls.tag}
         >
             {Icon && <Icon className={cls.icon} />}

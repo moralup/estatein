@@ -2,7 +2,10 @@ import type { StorybookConfig } from '@storybook/react-webpack5';
 import { RuleSetRule } from 'webpack';
 
 const config: StorybookConfig = {
-    stories: ['../../src/**/*.mdx', '../../src/**/*.stories.@(js|jsx|mjs|ts|tsx)'],
+    stories: [
+        '../../src/**/*.mdx',
+        '../../src/**/*.stories.@(js|jsx|mjs|ts|tsx)',
+    ],
     addons: [
         '@storybook/addon-webpack5-compiler-swc',
         '@storybook/addon-onboarding',
@@ -10,6 +13,7 @@ const config: StorybookConfig = {
         '@storybook/addon-essentials',
         '@chromatic-com/storybook',
         '@storybook/addon-interactions',
+        '@storybook/addon-styling-webpack',
     ],
     framework: {
         name: '@storybook/react-webpack5',
@@ -51,13 +55,22 @@ const config: StorybookConfig = {
                 {
                     loader: 'css-loader',
                     options: {
-                        modules: true,
+                        modules: {
+                            // prettier-ignore
+                            auto: (resPath: string) => Boolean(resPath.includes('.module.')),
+                        },
                         importLoaders: 1,
                         // localIdentName:
                         //     '[path][name]__[local]--[hash:base64:5]',
                     },
                 },
-                'sass-loader',
+                {
+                    loader: 'sass-loader',
+                    options: {
+                        additionalData:
+                            '@import "app/style/mixins", "app/style/media-breakpoints";',
+                    },
+                },
             ],
         });
 

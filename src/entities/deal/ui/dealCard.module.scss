@@ -1,13 +1,22 @@
 @import './mixins';
 
+@mixin main_font_size($size) {
+    .feedbackLabel,
+    .feedback,
+    .since,
+    .info {
+        font-size: $size;
+    }
+}
 .cardWrapper {
     height: 100%;
 }
 
 .card {
-    gap: 30px;
     height: 100%;
-    outline: 6px solid var(--gray-color-10);
+    & > * {
+        width: 100%;
+    }
 }
 
 .header {
@@ -17,7 +26,6 @@
 
 .companyWrapper {
     gap: 6px;
-    // gap: 9px;
 }
 
 .infoContainer {
@@ -37,32 +45,123 @@
     }
 }
 
+.feedbackContainer {
+    gap: 13px;
+}
+
 .company,
 .info,
 .feedback {
     color: var(--absolute-color-white);
 }
 
-@include mobile() {
-    @include vertical_view();
-}
+.view {
+    &_vertical {
+        .header {
+            flex-direction: column;
+            align-items: normal;
+        }
+    }
 
-@include mobile_landscape() {
-    @include horizon_view();
-}
-
-@include tablet() {
-    @include vertical_view();
-}
-
-@include laptop() {
-    @include horizon_view();
-
-    .card {
-        outline: 8px solid var(--gray-color-10);
+    &_horizon {
+        .header {
+            justify-content: space-between;
+            flex-direction: row;
+            align-items: center;
+        }
     }
 }
 
-@include desktop_extra_extra() {
-    @include horizon_big_view();
+.size {
+    &_s {
+        @include main_font_size(14px);
+
+        .card {
+            gap: 30px;
+            padding: 24px;
+        }
+
+        .company {
+            font-size: 20px;
+        }
+
+        .info {
+            &Container {
+                gap: 4px;
+            }
+
+            &Label {
+                font-size: 12px;
+                margin-left: 2px;
+            }
+        }
+
+        .feedbackContainer {
+            padding: 20px;
+        }
+    }
+
+    &_m {
+        @include main_font_size(16px);
+
+        .card {
+            gap: 30px;
+            padding: 40px;
+        }
+
+        .company {
+            font-size: 24px;
+        }
+
+        .info {
+            &Container {
+                gap: 8px;
+            }
+
+            &Label {
+                font-size: 14px;
+                margin-left: 6px;
+            }
+        }
+
+        .feedbackContainer {
+            padding: 24px;
+        }
+    }
+    &_l {
+        @include main_font_size(18px);
+
+        .card {
+            padding: 50px;
+            gap: 40px;
+        }
+
+        .company {
+            font-size: 30px;
+        }
+
+        .info {
+            font-size: 20px;
+
+            &Container {
+                gap: 8px;
+
+                &:last-child {
+                    padding-left: 30px;
+                }
+
+                &:first-child {
+                    flex: 1.12;
+                }
+            }
+
+            &Label {
+                margin-left: 6px;
+            }
+        }
+
+        .feedbackContainer {
+            padding: 30px;
+        }
+    }
 }

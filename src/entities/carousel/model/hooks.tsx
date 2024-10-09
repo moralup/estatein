@@ -1,48 +1,69 @@
-import { type FC, useMemo } from 'react';
-import type { ResponsiveManagerType } from './types';
+import { useMemo } from 'react';
+import type { ResponsiveManagerQuantityType } from './types';
+import { CardListSettingType } from './types';
+import { BaseCardProps } from 'shared/ui/containers';
 
 /**
- * @param responsiveManager - An optional object configuring the number of elements displayed on the screen.
+ * Determines the number of items to be displayed based on the current window width
+ * and a responsive manager configuration.
  *
- * @returns The number of elements that should be displayed on the screen
+ * @param responsiveManager - An optional object that defines the responsive behavior.
+ *
+ * @returns The number of items to be displayed based on the current window width.
+ * If no responsive manager is provided or no matching width is found, it defaults to 1.
  */
-export const useNumberOfElements = (
-    responsiveManager?: ResponsiveManagerType,
-) => {
+
+export const useNumberOfItems = (responsiveManager?: ResponsiveManagerQuantityType) => {
     return useMemo(() => {
         if (!responsiveManager) return 1;
-
-        const responsiveManagerItem = Object.entries(responsiveManager)
+        /**
+         * WIDTH - min viewport width to display ITEMS
+         * ITEMS - optimal number of items when viewport width is larger than WIDTH
+         *
+         * [[WIDTH, { ITEMS: number } ], [...], ...]
+         */
+        const responsiveManagerItemInArray = Object.entries(responsiveManager)
             .sort(([a], [b]) => Number(b) - Number(a))
             .find(([width]) => window.innerWidth > Number(width));
 
-        if (responsiveManagerItem) return responsiveManagerItem[1].items;
+        if (responsiveManagerItemInArray) {
+            return responsiveManagerItemInArray[1].items;
+        }
 
         return 1;
     }, [responsiveManager]);
 };
 
 /**
- * @param elementsProps - Array of props that be spread to the card
- * @param Component - Card that is an element of a list
- * @param className - Optional string is className of card
+ * Creates an array of components based on the provided props.
  *
- * @returns array of react elements
+ * @param Component - The component to be created for each element in the array.
+ * @param componentsProps - An array of objects containing props for each component.
+ * @param commonProps - Common props to be applied to all created components.
+ * @param className - Additional styles to be applied to all created components.
+ *
+ * @returns An memorized array of created Component.
  */
 
-export const useCreateElements = <P, >(
-    elementsProps: P[],
-    Component: FC<P>,
-    className?: string,
-    commonProps?: Partial<P>,
-) => useMemo(() => {
-        return elementsProps.map((props, i) => (
-            <Component
+export const useCreateElements = ({
+    Card,
+    dataset,
+    cardProps,
+    gap,
+}: CardListSettingType<BaseCardProps<object>>) => {
+    return useMemo(() => {
+        return dataset.map((data, i) => (
+            <div
+                className=""
                 key={i}
-                className={className}
                 data-value={i + 1}
-                {...props}
-                {...(commonProps || {})}
-            />
+                style={{ margin: `0 ${gap / 2}px`, height: '100%' }}
+            >
+                <Card
+                    data={data}
+                    {...cardProps}
+                />
+            </div>
         ));
-    }, [Component, className, elementsProps, commonProps]);
+    }, [Card, cardProps, dataset, gap]);
+};

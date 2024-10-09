@@ -1,8 +1,8 @@
-/* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
 import type { CSSProperties, FC, MouseEventHandler } from 'react';
 import type { FormI } from '../types';
 import { useCallback, useMemo, useState } from 'react';
 import ArrowDownIcon from 'shared/assets/icons/arrow-down.svg';
+
 import { clsx } from 'shared/lib/clsx';
 import cls from './select.module.scss';
 import mainCls from '../form.module.scss';
@@ -37,12 +37,10 @@ export const Select: FC<SelectProps> = props => {
     const [isActive, setIsActive] = useState(false);
 
     // prettier-ignore
-    const onChangeSelectHandler: MouseEventHandler<HTMLUListElement> = useCallback(
+    const onChangeSelectHandler: MouseEventHandler<HTMLDivElement> = useCallback(
         e => {
-            e.stopPropagation();
-
             if (e.target instanceof HTMLElement) {
-                const option = e.target.closest('div[data-id]');
+                const option = e.target.closest('li[data-id]');
                 if (option instanceof HTMLElement) {
                     onChangeSelect?.(option.dataset.id!);
                 }
@@ -63,36 +61,49 @@ export const Select: FC<SelectProps> = props => {
         <div
             style={style}
             className={selectClasses}
-            onClick={() => setIsActive(prev => !prev)}
         >
             {label && <span className={clsx(mainCls.label)}>{label}</span>}
-            <div className={clsx(cls.value, mainCls.form, isActive && cls.value_active)}>
+            <div
+                onClick={() => setIsActive(prev => !prev)}
+                className={clsx(
+                    cls.value,
+                    isActive && cls.value_active,
+                    mainCls.form,
+                )}
+            >
                 {Icon && (
                     <div className={cls.value__iconWrap}>
                         <Icon className={cls.value__icon} />
                     </div>
                 )}
                 <span className={cls.value__text}>{value}</span>
-                <span className={cls.value__pseudoBtn}>
+                <span
+                    className={clsx(
+                        cls.value__pseudoBtn,
+                        isActive && cls.value__pseudoBtn_active,
+                    )}
+                >
                     <ArrowDownIcon className={cls.arrowDownIcon} />
                 </span>
             </div>
             {isActive && (
-                <ul
+                <div
+                    className={cls.contentWrap}
                     onClick={onChangeSelectHandler}
-                    className={cls.content}
                 >
-                    {options.map(option => (
-                        <li
-                            data-id={option.value}
-                            className={clsx(cls.option)}
-                        >
-                            <span className={cls.option__text}>
-                                {option.label}
-                            </span>
-                        </li>
-                    ))}
-                </ul>
+                    <ul className={cls.content}>
+                        {options.map(option => (
+                            <li
+                                data-id={option.value}
+                                className={cls.option}
+                            >
+                                <span className={cls.option__text}>
+                                    {option.label}
+                                </span>
+                            </li>
+                        ))}
+                    </ul>
+                </div>
             )}
         </div>
     );

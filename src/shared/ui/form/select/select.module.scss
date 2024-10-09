@@ -1,8 +1,15 @@
+$border_color: var(--gray-color-15);
+
 @mixin tile_padding($padding) {
     .value,
     .option {
         padding: $padding;
     }
+}
+
+.value,
+.content {
+    cursor: pointer;
 }
 
 @include mobile() {
@@ -22,15 +29,16 @@
         }
     }
 
+    .value.value_active {
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+    }
+
     .value {
         background: var(--background);
         display: flex;
         align-items: center;
-
-        &_active {
-            border-bottom-left-radius: 0;
-            border-bottom-right-radius: 0;
-        }
+        outline: 1px solid $border_color;
 
         &__text {
             color: var(--color);
@@ -40,7 +48,7 @@
         &__iconWrap {
             padding-right: 8px;
             margin-right: 8px;
-            border-right: 1px solid var(--gray-color-15);
+            border-right: 1px solid $border_color;
             height: fit-content;
             line-height: 0;
         }
@@ -52,6 +60,11 @@
             border-radius: 50%;
             margin-left: auto;
             line-height: 0;
+            transition: transform 0.2s ease;
+
+            &_active {
+                transform: rotate(180deg);
+            }
         }
     }
 
@@ -62,15 +75,20 @@
         overflow-x: hidden;
         position: absolute;
         left: 0;
+        top: 0;
         z-index: 1;
         background: var(--background);
-        outline: 1px solid var(--gray-color-15);
+        outline: 1px solid $border_color;
         border-bottom-left-radius: var(--card-border-radius);
         border-bottom-right-radius: var(--card-border-radius);
+
+        &Wrap {
+            position: relative;
+        }
     }
 
     .option {
-        border-top: 1px solid var(--gray-color-10);
+        border-top: 1px solid $border_color;
 
         &__text {
             color: var(--color);

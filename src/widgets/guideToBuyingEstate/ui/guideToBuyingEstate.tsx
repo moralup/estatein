@@ -3,7 +3,7 @@ import type { FC } from 'react';
 import { guideToBuyingEstateData } from '../model/consts';
 import { numberFormatter } from 'shared/lib/numberFormatter';
 
-import { InfoBlock } from 'shared/ui/containerWithStars';
+import { InfoBlock } from 'shared/ui/containers';
 import { StepGuide } from 'entities/stepGuide';
 
 import cls from './guideToBuyingEstate.module.scss';
@@ -11,8 +11,6 @@ import cls from './guideToBuyingEstate.module.scss';
 export const GuideToBuyingEstate: FC = () => {
     return (
         <InfoBlock
-            textContainerClassName={cls.text}
-            className={cls.test}
             description={`At Estatein, we've designed a straightforward process 
             to help you find and purchase your dream property with ease. Here's 
             a step-by-step guide to how it all works.`}

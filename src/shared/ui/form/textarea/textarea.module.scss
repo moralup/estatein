@@ -2,6 +2,7 @@
     .textarea {
         width: 100%;
         resize: none;
+        background: var(--gray-color-10);
 
         &::placeholder {
             color: var(--gray-color-40);

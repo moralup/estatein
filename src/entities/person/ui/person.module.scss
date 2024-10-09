@@ -1,10 +1,5 @@
-.card {
-    --card-padding: 20px;
-    --name-margin-bottom: 6px;
-    --role-margin-bottom: 16px;
-    --btnTelegram-padding: 7px 7px 8px 23px;
-
-    padding: var(--card-padding);
+.person {
+    padding: 20px;
 }
 
 .img {
@@ -36,11 +31,11 @@
 }
 
 .name {
-    margin-bottom: var(--name-margin-bottom);
+    margin-bottom: 6px;
 }
 
 .role {
-    margin-bottom: var(--role-margin-bottom);
+    margin-bottom: 16px;
     text-wrap: nowrap;
 }
 
@@ -48,7 +43,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: var(--btnTelegram-padding);
+    padding: 7px 7px 8px 23px;
     border-radius: 100px;
 }
 
@@ -60,15 +55,24 @@
 }
 
 @include laptop() {
-    .card {
-        --card-padding: 24px;
-        --name-margin-bottom: 4px;
-        --role-margin-bottom: 19px;
-        --btnTelegram-padding: 9px 9px 9px 20px;
+    .person {
+        padding: 24px;
     }
 
     .imgWrapper {
         margin-bottom: 50px;
+    }
+
+    .name {
+        margin-bottom: 4px;
+    }
+
+    .role {
+        margin-bottom: 19px;
+    }
+
+    .btnTelegram {
+        padding: 9px 9px 9px 20px;
     }
 
     .telegramIconWrapper {
@@ -77,12 +81,8 @@
 }
 
 @include desktop_extra_extra() {
-    .card {
-        --card-padding: 30px;
-
-        --name-margin-bottom: 0;
-        --role-margin-bottom: 22px;
-        --btnTelegram-padding: 14px 12px 14px 24px;
+    .person {
+        padding: 30px;
     }
 
     .img {
@@ -96,5 +96,17 @@
                 padding: 13px 26px;
             }
         }
+    }
+
+    .name {
+        margin-bottom: 0px;
+    }
+
+    .role {
+        margin-bottom: 22px;
+    }
+
+    .btnTelegram {
+        padding: 14px 12px 14px 24px;
     }
 }

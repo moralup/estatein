@@ -23,7 +23,8 @@ export const buildLoaders = ({ isDev, paths }: BuildOptionsI): RuleSetRule[] => 
             {
                 loader: 'sass-loader',
                 options: {
-                    additionalData: `@import "${paths.sass.join('", "')}";`,
+                    // additionalData: `@use "${paths.sass.join('"; @use "')}";`,
+                    additionalData: `@import "${paths.sass.join('"; @import "')}";`,
                 },
             },
         ],

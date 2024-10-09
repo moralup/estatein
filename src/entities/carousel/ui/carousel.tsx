@@ -1,10 +1,14 @@
-import type { FC } from 'react';
 import type { EventObject } from 'react-alice-carousel';
-import type { NavigationViewType, ResponsiveManagerType } from '../model/types';
+import type { BaseCardProps } from 'shared/ui/containers';
+import type {
+    CardListSettingType,
+    NavigationViewType,
+    ResponsiveManagerQuantityType,
+} from '../model/types';
 
 import AliceCarousel, { Responsive } from 'react-alice-carousel';
 import { useState } from 'react';
-import { useCreateElements, useNumberOfElements } from '../model/hooks';
+import { useCreateElements, useNumberOfItems } from '../model/hooks';
 import { useThrottle } from 'shared/lib/hooks/useThrottle';
 import { numberFormatter } from 'shared/lib/numberFormatter';
 
@@ -16,73 +20,64 @@ import { clsx } from 'shared/lib/clsx';
 import cls from './carousel.module.scss';
 import './alice-carousel.scss';
 
-export interface CarouselProps<P> {
-    /** Additional className */
+export type CarouselProps<P extends BaseCardProps<object>> = {
+    /** Additional styles. */
     className?: string;
-    /** An optional string is className for carousel wrapper. Needed for add negative indent */
-    clsIndentList?: string;
-    /** An optional string is className for card. Needed for add indent */
-    clsIndentCard?: string;
-    /** A Component is list element */
-    Card: FC<P>;
-    /** An array of props that be spread to the card */
-    cardsProps: P[];
-    /** A common props that is the same for every card */
-    commonProps?: Partial<P>;
-    /** An Optional string determining how the carousel footer be displayed for mobile screen. */
+    /** Defines view of footer */
     navigationView?: NavigationViewType;
-    /** An optional object configuring the number of elements displayed on the screen */
-    responsiveManager?: ResponsiveManagerType;
-}
+    /** An optional object that defines the responsive behavior */
+    responsiveManager?: ResponsiveManagerQuantityType;
+    /** Animation duration of item swipe. Default - 1000 */
+    animationDuration?: number;
+} & CardListSettingType<P>;
 
-const ANIMATION_DURATION = 1000;
-
-export const Carousel = <P, >(props: CarouselProps<P>) => {
+// prettier-ignore
+export const Carousel = <P extends BaseCardProps<object>>(props: CarouselProps<P>) => {
     const {
         className,
-        clsIndentList,
-        clsIndentCard,
-        Card,
-        cardsProps,
-        commonProps,
         responsiveManager,
         navigationView = 'right',
+        animationDuration = 1000,
+        ...cardListSetting
     } = props;
 
     const [activeIndex, setActiveIndex] = useState(0);
-    const items = useCreateElements(cardsProps, Card, clsIndentCard, commonProps);
-    const numberOfElements = useNumberOfElements(responsiveManager);
+    const items = useCreateElements(
+        cardListSetting as CardListSettingType<BaseCardProps<object>>,
+    );
+    const numberOfItems = useNumberOfItems(responsiveManager);
 
     const isSlidePrev = activeIndex > 0;
-    const isSlideNext = items.length - numberOfElements > activeIndex;
+    const isSlideNext = items.length - numberOfItems > activeIndex;
 
     const slidePrev = useThrottle(() => {
-        setActiveIndex(isSlidePrev ? activeIndex - 1 : 0);
-    }, ANIMATION_DURATION);
+        if (isSlidePrev) setActiveIndex(activeIndex - 1);
+    }, animationDuration);
 
     const slideNext = useThrottle(() => {
-        setActiveIndex(isSlideNext ? activeIndex + 1 : activeIndex);
-    }, ANIMATION_DURATION);
+        if (isSlideNext) setActiveIndex(activeIndex + 1);
+    }, animationDuration);
 
     const onSlideChanged = (e: EventObject) => setActiveIndex(e.item);
 
     const getNavigationLabel = () => {
-        const start = numberFormatter(activeIndex + 1);
+        const currentCount = numberFormatter(activeIndex + 1);
         const length = numberFormatter(items.length);
+        const resultCount = isSlideNext ? currentCount : length;
 
-        if (numberOfElements > 1) {
-            const end = numberFormatter(activeIndex + numberOfElements);
-            return `${start} - ${end} of ${length}`;
-        }
-
-        return `${start} of ${length}`;
+        return `${resultCount} of ${length}`;
     };
 
+    const isRenderNavigation = items.length > numberOfItems;
+
     return (
-        <VStack className={clsx(cls.carousel, className)}>
-            <div className={clsIndentList}>
+        <VStack
+            className={clsx(cls.carousel, className)}
+            align="normal"
+        >
+            <div style={{ margin: `0 -${cardListSetting.gap / 2}px` }}>
                 <AliceCarousel
-                    animationDuration={ANIMATION_DURATION}
+                    animationDuration={animationDuration}
                     disableDotsControls
                     disableButtonsControls
                     items={items}
@@ -91,34 +86,39 @@ export const Carousel = <P, >(props: CarouselProps<P>) => {
                     onSlideChanged={onSlideChanged}
                 />
             </div>
-            <HStack
-                className={clsx(
-                    cls.navigation,
-                    cls[`navigation__${navigationView}`],
-                )}
-            >
-                <Button
-                    disabled={!isSlidePrev}
-                    circle
-                    theme="grayBackground"
-                    onClick={slidePrev}
-                    className={cls.btnArrow}
+            {isRenderNavigation && (
+                <HStack
+                    className={clsx(
+                        cls.navigation,
+                        cls[`navigation__${navigationView}`],
+                    )}
                 >
-                    <ArrowRightIcon
-                        className={clsx(cls.arrowIcon, cls.arrowIcon__rotated)}
-                    />
-                </Button>
-                <span className={cls.counter}>{getNavigationLabel()}</span>
-                <Button
-                    disabled={!isSlideNext}
-                    circle
-                    theme="grayBackground"
-                    onClick={slideNext}
-                    className={cls.btnArrow}
-                >
-                    <ArrowRightIcon className={cls.arrowIcon} />
-                </Button>
-            </HStack>
+                    <Button
+                        disabled={!isSlidePrev}
+                        circle
+                        theme="grayBackground"
+                        onClick={slidePrev}
+                        className={cls.btnArrow}
+                    >
+                        <ArrowRightIcon
+                            className={clsx(
+                                cls.arrowIcon,
+                                cls.arrowIcon__rotated,
+                            )}
+                        />
+                    </Button>
+                    <span className={cls.counter}>{getNavigationLabel()}</span>
+                    <Button
+                        disabled={!isSlideNext}
+                        circle
+                        theme="grayBackground"
+                        onClick={slideNext}
+                        className={cls.btnArrow}
+                    >
+                        <ArrowRightIcon className={cls.arrowIcon} />
+                    </Button>
+                </HStack>
+            )}
         </VStack>
     );
 };

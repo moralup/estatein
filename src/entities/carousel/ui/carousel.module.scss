@@ -1,6 +1,7 @@
 @include mobile() {
     .carousel {
         gap: 30px;
+        width: 100%; 
     }
 
     .arrowIcon {

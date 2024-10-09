@@ -2,7 +2,7 @@ import type { FC } from 'react';
 
 import { services } from '../model/consts';
 
-import { Card } from 'shared/ui/card';
+import { Card } from 'shared/ui/containers';
 import ArrowIcon from 'shared/assets/icons/arrow-up-right.svg';
 
 import { clsx } from 'shared/lib/clsx';

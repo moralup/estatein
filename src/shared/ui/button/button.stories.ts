@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { fn } from '@storybook/test';
 import { Button } from './button';
-import { outlineDecorator } from 'shared/config/storybook/outlineDecorator/outlineDecorator';
+import { containerDecorator } from 'shared/config/storybook';
 
 const meta = {
     title: 'shared/Button',
@@ -15,18 +15,20 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const Outline: Story = {};
+export const Prime: Story = { decorators: containerDecorator(400) };
 
 export const GrayBackground: Story = {
     args: {
         theme: 'grayBackground',
     },
+    decorators: containerDecorator(400),
 };
 
 export const Background: Story = {
     args: {
         theme: 'background',
     },
+    decorators: containerDecorator(400),
 };
 
 export const Max: Story = {
@@ -34,5 +36,5 @@ export const Max: Story = {
         max: true,
         theme: 'background',
     },
-    decorators: outlineDecorator(400),
+    decorators: containerDecorator(400),
 };

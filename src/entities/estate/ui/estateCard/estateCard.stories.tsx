@@ -23,11 +23,36 @@ const meta = {
         layout: 'centered',
     },
     args: {
-        estate,
+        data: estate,
     },
+
+    decorators: Component => (
+        <div style={{ width: 400 }}>
+            <Component />
+        </div>
+    ),
 } satisfies Meta<typeof EstateCard>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const Prime: Story = {};
+export const Primary: Story = {};
+
+export const WithSpecificationsTags: Story = {
+    args: {
+        isSpecificationsTags: true,
+    },
+};
+
+export const WithAmbianceTag: Story = {
+    args: {
+        isAmbianceTag: true,
+    },
+};
+
+export const CompleteSet: Story = {
+    args: {
+        isSpecificationsTags: true,
+        isAmbianceTag: true,
+    },
+};

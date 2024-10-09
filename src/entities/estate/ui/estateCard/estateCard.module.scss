@@ -1,83 +1,114 @@
 @include mobile() {
     .card {
-        gap: 18px;
         height: 100%;
         align-items: normal;
+
     }
 
-    .estateImage {
+    .estate {
+        &Image {
+            width: 100%;
+            border-radius: var(--image-border-radius);
+            object-fit: cover;
+        }
+
+        &Summary {
+            margin-bottom: auto;
+        }
+
+        &Details {
+            height: 100%;
+        }
+    }
+
+    .footer {
         width: 100%;
-        aspect-ratio: 64 / 43;
-        max-height: 255px;
-        border-radius: var(--image-border-radius);
-        object-fit: cover;
-    }
-    
-    .estateSummary {
-        gap: 2px;
-        margin-bottom: auto;
-    }
-
-    .estateDetails {
-        gap: 19px;
-        height: 100%;
-    }
-
-    .footer {
-        gap: 31px;
     }
 }
 
-@include laptop() {
-    .card {
-        gap: 20px;
-        // padding-bottom: 24px;
-    }
+.size {
+    &_s {
+        &.card {
+            gap: 18px;
+            padding: 24px;
+        }
 
-    .estateImage {
-        max-height: 330px;
-    }
+        .estate {
+            &Image {
+                aspect-ratio: 64 / 43;
+                max-height: 255px;
+            }
 
-    .estateDetails {
-        gap: 24px;
-    }
+            &Summary {
+                gap: 2px;
+            }
 
-    .estateSummary {
-        gap: 4px;
-        margin-bottom: auto;
-    }
+            &Details {
+                gap: 19px;
+            }
+        }
 
-    .estateImage {
-        aspect-ratio: 32 / 23;
+        .footer {
+            gap: 31px;
+            gap: 20px;
+        }
     }
+    &_m {
+        &.card {
+            gap: 20px;
+            padding: 30px;
+        }
 
-    .priceLabel {
-        font-size: 14px;
+        .estate {
+            &Image {
+                aspect-ratio: 64 / 43;
+                max-height: 330px;
+            }
+
+            &Details {
+                gap: 24px;
+            }
+
+            &Summary {
+                gap: 4px;
+            }
+        }
+
+        .priceLabel {
+            font-size: 14px;
+        }
+
+        .footer {
+            gap: 40px;
+        }
     }
+    &_l {
+        &.card {
+            padding: 40px;
+            gap: 36px;
+        }
 
-    .footer {
-        gap: 40px;
-    }
-}
+        .estate {
+            &Image {
+                aspect-ratio: 32 / 23;
+                max-height: 330px;
+            }
 
-@include desktop_extra_extra() {
-    .card {
-        gap: 36px;
-    }
+            &Details {
+                gap: 28px;
+            }
 
-    .estateDetails {
-        gap: 28px;
-    }
+            &Summary {
+                gap: 10px;
+            }
+        }
 
-    .estateSummary {
-        gap: 10px;
-    }
+        .priceLabel {
+            font-size: 18px;
+        }
 
-    .priceLabel {
-        font-size: 18px;
-    }
-
-    .footer {
-        gap: 50px;
+        .footer {
+            gap: 50px;
+        }
     }
 }

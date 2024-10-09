@@ -7,21 +7,25 @@ import { VStack } from 'shared/ui/stack';
 
 import { clsx } from 'shared/lib/clsx';
 import cls from './commentCard.module.scss';
-import { Card } from 'shared/ui/card';
+import { BaseCardProps, Card } from 'shared/ui/containers';
 
-export interface CommentCardProps {
-    className?: string;
-    comment: CommentI;
-}
+export type CommentCardProps = BaseCardProps<CommentI>;
 
-export const CommentCard: FC<CommentCardProps> = ({ className, comment }) => {
-    const { feedback, rating, feedbackTitle, user } = comment;
+export const CommentCard: FC<CommentCardProps> = props => {
+    const { className, size, view = 'vertical', data } = props;
+    const { feedback, rating, feedbackTitle, user } = data;
+
+    const cardClasses = clsx(
+        cls.commentCard,
+        cls[`size_${size}`],
+        cls[`view_${view}`],
+        className,
+    );
 
     return (
         <Card
-            className={clsx(cls.commentCard, className)}
+            className={cardClasses}
             align="left"
-            padding="l"
         >
             <RatingStar
                 rating={rating}

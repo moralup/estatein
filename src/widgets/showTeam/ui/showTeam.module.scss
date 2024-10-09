@@ -9,12 +9,6 @@
     }
 }
 
-@include laptop() {
-    .textContainer {
-        width: 80%;
-    }
-}
-
 @include desktop() {
     .teamList {
         grid-auto-columns: minmax(0, 1fr);
@@ -23,10 +17,6 @@
 }
 
 @include desktop_extra_extra() {
-    .textContainer {
-        width: 85%;
-    }
-
     .teamList {
         gap: 30px;
     }

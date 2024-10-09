@@ -2,8 +2,8 @@
     .input {
         line-height: inherit;
         font-size: inherit;
-        color: inherit;
         background: inherit;
+        color: var(--gray-color-60);
 
         &Wrapper {
             gap: 6px;
